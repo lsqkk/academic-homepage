@@ -5,7 +5,7 @@ layout: homepage
 
 I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automation** at Xi'an Jiaotong University(西安交通大学) and a member of the 2023 class of the **Young Gifted Program (YGP, 少年班)**. My focus lies at the intersection of intelligent systems and software engineering, with a proven ability to solve practical problems through independent development and project implementation. My interests span machine learning, embedded systems, and full-stack application development.
 
-## **Education**
+## Education
 
 ### Xi'an Jiaotong University
 
@@ -14,7 +14,7 @@ I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automa
 - **Young Gifted Program Phase (Preparatory)** | Sept. 2023 - Jun. 2025
   Completed undergraduate prerequisite coursework ahead of schedule and initiated early training in engineering practice and scientific research. Independently developed and maintained a personal technical blog, created applications using low-code platforms, and obtained multiple software copyrights. Participated in and received awards in several academic competitions.
 
-## **Project Experience**
+## Project Experience
 
 ### CNN-based Animal Recognition System (YGP Preparatory AI Course Project)
 
@@ -54,19 +54,44 @@ I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automa
 - Designed, developed from scratch, and continuously maintain a static blog system for sharing technical notes and project summaries. The system achieves zero server backend deployment, with all code open-sourced. The site has obtained a software copyright.
 - Link: [Quark Blog](https://lsqkk.github.io/)
 
-## **Competitions & Awards**
+## Competitions & Awards
 
-- **Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM), 2025** – Honorable Mention. Responsible for mathematical model construction, paper writing, and data visualization.
-- **China Undergraduate Physics Experiment Competition, 2025** – National First Prize (First Place in the Northwestern Division). Responsible for animation simulation and video production of core experimental phenomena.
-- **Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)** – Provincial Third Prize. Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
-- **Xi'an Jiaotong University School-Level Scholarship, 2025**
+### Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM), 2025
 
-## **Technical Skills**
+- Honorable Mention
+- Responsible for mathematical model construction, paper writing, and data visualization.
 
-- **Programming Languages**: Python (data processing & machine learning), C/C++ (fundamental development), JavaScript/HTML/CSS (front-end development), Bash (Linux operations).
-- **Frameworks & Tools**: TensorFlow/PyTorch, PaddlePaddle, Linux, Git, Firebase, LaTeX.
-- **Hardware & Platforms**: Familiar with Arduino development fundamentals, experienced in deploying platforms like Orange Pi.
-- **Languages**: Chinese (Native), English (CET-6, proficient in reading academic literature).
+### China Undergraduate Physics Experiment Competition, 2025** 
+
+- National First Prize (First Place in the Northwestern Division)
+- Responsible for animation simulation and video production of core experimental phenomena.
+
+### Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)
+- Provincial Third Prize
+- Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
+
+### Xi'an Jiaotong University School-Level Scholarship, 2025
+
+## Technical Skills
+
+### Programming Languages
+- Python (data processing & machine learning)
+- C/C++ (fundamental development)
+- JavaScript/HTML/CSS (front-end development)
+- Bash (Linux operations)
+
+### Frameworks & Tools
+
+TensorFlow/PyTorch, PaddlePaddle, Linux, Git, Firebase, LaTeX.
+
+### Hardware & Platforms
+
+Familiar with Arduino development fundamentals, experienced in deploying platforms like Orange Pi.
+
+### Languages
+
+- Chinese (Native)
+- English (CET-6, proficient in reading academic literature)
 
 ## News
 
