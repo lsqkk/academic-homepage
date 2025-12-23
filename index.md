@@ -3,7 +3,7 @@ layout: homepage
 ---
 ## About Me
 
-I am a 2025 undergraduate student in the School of **Automation** at Xi'an Jiaotong University(西安交通大学) and a member of the 2023 class of the **Young Gifted Program (YGP, 少年班)**. My focus lies at the intersection of intelligent systems and software engineering, with a proven ability to solve practical problems through independent development and project implementation. My interests span machine learning, embedded systems, and full-stack application development.
+I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automation** at Xi'an Jiaotong University(西安交通大学) and a member of the 2023 class of the **Young Gifted Program (YGP, 少年班)**. My focus lies at the intersection of intelligent systems and software engineering, with a proven ability to solve practical problems through independent development and project implementation. My interests span machine learning, embedded systems, and full-stack application development.
 
 ## **Education**
 
