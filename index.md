@@ -44,11 +44,9 @@ I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automa
 
 ## **Competitions & Awards**
 
-- **Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM), 2025** – Honorable Mention
-  Responsible for mathematical model construction, paper writing, and data visualization.
-- **China Undergraduate Physics Experiment Competition, 2025** – National First Prize (First Place in the Northwestern Division)
-- **Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)** – Provincial Third Prize
-  Responsible for animation simulation and video production of core experimental phenomena.
+- **Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM), 2025** – Honorable Mention. Responsible for mathematical model construction, paper writing, and data visualization.
+- **China Undergraduate Physics Experiment Competition, 2025** – National First Prize (First Place in the Northwestern Division). Responsible for animation simulation and video production of core experimental phenomena.
+- **Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)** – Provincial Third Prize. Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
 - **Xi'an Jiaotong University School-Level Scholarship, 2025**
 
 ## **Technical Skills**
