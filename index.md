@@ -61,16 +61,19 @@ I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automa
 - Honorable Mention
 - Responsible for mathematical model construction, paper writing, and data visualization.
 
-### China Undergraduate Physics Experiment Competition, 2025** 
+### China Undergraduate Physics Experiment Competition, 2025
 
 - National First Prize (First Place in the Northwestern Division)
 - Responsible for animation simulation and video production of core experimental phenomena.
 
-### Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)
+### Global Campus Artificial Intelligence Algorithm Elite Competition (AIC), 2025
 - Provincial Third Prize
 - Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
 
 ### Xi'an Jiaotong University School-Level Scholarship, 2025
+
+- Third class scholarship at the school level
+- My junior class is ranked in the top 20% of this year's overall ranking.
 
 ## Technical Skills
 
