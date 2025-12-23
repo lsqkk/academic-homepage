@@ -1,0 +1,25 @@
+main:
+
+  - title: Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM)
+    year: 2025
+    award_description: Honorable Mention
+    reason: Responsible for mathematical model construction, paper writing, and data visualization.
+    image: ./assets/img/award_mcm.png
+
+  - title: China Undergraduate Physics Experiment Competition
+    year: 2025
+    award_description: National First Prize (First Place in the Northwestern Division)
+    reason: Responsible for animation simulation and video production of core experimental phenomena.
+    image: ./assets/img/award_physics.png
+
+  - title: Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)
+    year: 2025
+    award_description: Provincial Third Prize
+    reason: Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
+    image: ./assets/img/award_aic.png
+
+  - title: Xi'an Jiaotong University School-Level Scholarship
+    year: 2025
+    award_description: Third class scholarship at the school level
+    reason: My junior class is ranked in the top 20% of this year's overall ranking.
+    image: ./assets/img/award_scholarship.png

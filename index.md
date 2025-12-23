@@ -14,6 +14,11 @@ I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automa
 - **Young Gifted Program Phase (Preparatory)** | Sept. 2023 - Jun. 2025
   Completed undergraduate prerequisite coursework ahead of schedule and initiated early training in engineering practice and scientific research. Independently developed and maintained a personal technical blog, created applications using low-code platforms, and obtained multiple software copyrights. Participated in and received awards in several academic competitions.
 
+
+{% include project.md %}
+
+{% include awards.md %}
+
 ## Project Experience
 
 ### CNN-based Animal Recognition System (YGP Preparatory AI Course Project)
@@ -67,6 +72,7 @@ I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automa
 - Responsible for animation simulation and video production of core experimental phenomena.
 
 ### Global Campus Artificial Intelligence Algorithm Elite Competition (AIC), 2025
+
 - Provincial Third Prize
 - Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
 
@@ -78,6 +84,7 @@ I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automa
 ## Technical Skills
 
 ### Programming Languages
+
 - Python (data processing & machine learning)
 - C/C++ (fundamental development)
 - JavaScript/HTML/CSS (front-end development)
@@ -85,11 +92,12 @@ I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of **Automa
 
 ### Frameworks & Tools
 
-TensorFlow/PyTorch, PaddlePaddle, Linux, Git, Firebase, LaTeX.
+- TensorFlow/PyTorch, PaddlePaddle, Linux, Git, Firebase, LaTeX.
 
 ### Hardware & Platforms
 
-Familiar with Arduino development fundamentals, experienced in deploying platforms like Orange Pi.
+- Familiar with Arduino development fundamentals
+- Experienced in deploying platforms like Orange Pi
 
 ### Languages
 
