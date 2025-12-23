@@ -7,6 +7,7 @@ main:
     tech_stack: Python, PyTorch, OpenCV
     outcome: Course project submitted with full pipeline documentation and performance analysis.
     image: ./assets/img/project_animal_recognition.png
+    link: ./assets/files/基于卷积神经网络(CNN)的动物识别.XINRAN DAI, ENZE ZHU, JIEMING ZHANG.pdf
 
   - title: U-Transformer Architecture for Meteorological Prediction
     year: 2024
@@ -15,6 +16,7 @@ main:
     tech_stack: Python, PaddlePaddle, NumPy
     outcome: Functional prototype for multi-step meteorological variable forecasting.
     image: ./assets/img/project_weather_prediction.png
+    link: ./assets/files/基于U-transformer架构的人工智能气象预测.ERQI CHEN, ENZE ZHU, TIAN HAO.pdf
 
   - title: Cross-Platform PPT Remote Control Tool
     year: 2025
