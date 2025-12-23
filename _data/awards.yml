@@ -10,7 +10,7 @@ main:
     year: 2025
     award_description: National First Prize (First Place in the Northwestern Division)
     reason: Responsible for animation simulation and video production of core experimental phenomena.
-    image: ./assets/img/award_physics.png
+    image: ./assets/img/award_physics.jpg
 
   - title: Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)
     year: 2025
@@ -21,5 +21,5 @@ main:
   - title: Xi'an Jiaotong University School-Level Scholarship
     year: 2025
     award_description: Third class scholarship at the school level
-    reason: My junior class is ranked in the top 20% of this year's overall ranking.
+    reason: Top 20% in comprehensive testing ranking.
     image: ./assets/img/award_scholarship.png
