@@ -31,7 +31,7 @@ I am a 2025 undergraduate student in the School of **Automation** at Xi'an Jiaot
 ### AI-Based Forest Fire Prediction Model (AICOMAP Competition)
 
 - Responsible for the multimodal data preprocessing pipeline, specifically handling the download, cleaning, and spatial interpolation of ERA5 reanalysis meteorological data to provide structured input for subsequent CNN and large language model training. The project won a provincial third prize.
-- Tech Stack: Python, TensorFlow/PyTorch.
+- Tech Stack: Python, PaddlePaddle.
 
 ### Personal Server Deployment and Operation
 
@@ -40,6 +40,7 @@ I am a 2025 undergraduate student in the School of **Automation** at Xi'an Jiaot
 ### Personal Independent Blog Development
 
 - Designed, developed from scratch, and continuously maintain a static blog system for sharing technical notes and project summaries. The system achieves zero server backend deployment, with all code open-sourced. The site has obtained a software copyright.
+- Link: [Quark Blog](https://lsqkk.github.io/)
 
 ## **Competitions & Awards**
 
@@ -53,7 +54,7 @@ I am a 2025 undergraduate student in the School of **Automation** at Xi'an Jiaot
 ## **Technical Skills**
 
 - **Programming Languages**: Python (data processing & machine learning), C/C++ (fundamental development), JavaScript/HTML/CSS (front-end development), Bash (Linux operations).
-- **Frameworks & Tools**: TensorFlow/PyTorch, Linux, Git, Firebase, LaTeX.
+- **Frameworks & Tools**: TensorFlow/PyTorch, PaddlePaddle, Linux, Git, Firebase, LaTeX.
 - **Hardware & Platforms**: Familiar with Arduino development fundamentals, experienced in deploying platforms like Orange Pi.
 - **Languages**: Chinese (Native), English (CET-6, proficient in reading academic literature).
 
