@@ -65,7 +65,3 @@ I am a 2025 undergraduate student in the School of **Automation** at Xi'an Jiaot
 - **[Apr. 2025]** "Quark Blog" was registered for software copyright.
 - **[Feb. 2025]** My personal blog "Quark Blog" (lsqkk.github.io) was launched.
 - **[Jan. 2025]** I obtained the software copyright for "Quark Autonomy Control".
-
-[//]: # {% include_relative _includes/publications.md %}
-
-[//]: # {% include_relative _includes/services.md %}
