@@ -1,187 +1,86 @@
-# The Minimal Light Theme
+# 我的学术主页（基于 Minimal Light 修改版）
 
-[![LICENSE](https://img.shields.io/github/license/yaoyao-liu/homepage?style=flat-square&logo=creative-commons&color=EF9421)](https://github.com/yaoyao-liu/minimal-light/blob/main/LICENSE)
+[![LICENSE](https://img.shields.io/github/license/yaoyao-liu/minimal-light?style=flat-square&logo=creative-commons&color=EF9421)](https://github.com/yaoyao-liu/minimal-light/blob/main/LICENSE)
 
-\[[Demo the theme](https://minimal-light-theme.yliu.me/)\]  \[[简体中文](https://github.com/yaoyao-liu/minimal-light/blob/master/README_zh_Hans.md) | [繁體中文](https://github.com/yaoyao-liu/minimal-light/blob/master/README_zh_Hant.md) | [Deutsche](https://github.com/yaoyao-liu/minimal-light/blob/master/README_de.md)\]
- 
-*This is the source code of my homepage. I build this website based on [minimal](https://github.com/orderedlist/minimal).*
-<br>
-*Feel free to use and share the source code anywhere you like.*
+\[[Demo the theme](https://minimal-light-theme.yliu.me/)\]  \[[原模板Readme(英文)](README_en.md)]
 
-An improved vision from [@Xiao-Chenguang](https://github.com/Xiao-Chenguang): [[link](https://github.com/Xiao-Chenguang/minimal-light)]
+本项目是一个基于 [Minimal Light](https://github.com/yaoyao-liu/minimal-light) 主题修改的学术个人主页模板，适用于本科生、研究生或研究人员展示个人信息、项目经历、竞赛获奖等内容。
 
-**The latest version of my homepage is available here: <br><https://github.com/yaoyao-liu/homepage>**
+## 主要改动与特色
 
-## Features
+在原版 Minimal Light 主题的基础上，我进行了以下调整，使其更适合**尚未发表论文但拥有项目实践或竞赛经历的本科新生**：
 
-- Simple and elegant personal homepage theme
-- Jekyll theme, automatically deployed by GitHub Pages
-- Basic search engine optimization
-- Mobile friendly
-- Supporting Markdown 
-- Supporting dark mode
+- ✅ 新增 **Project Experience** 模块，用于展示个人或团队项目
+- ✅ 新增 **Competitions & Awards** 模块，用于展示竞赛成果与获奖情况
+- ✅ 保持原主题的简洁风格，适配学术与项目展示的双重需求
+- ✅ 兼容原主题所有功能（自动暗黑模式、移动端适配、SEO 优化等）
 
-## Project Architecture
+## 快速使用
 
-```
-.
-├── _data                    
-|   └── publications.yml                      # the YAML file for publications
-├── _includes                    
-|   ├── publications.md                       # the Markdown file for publications
-|   └── services.md                           # the Markdown file for services
-├── _layouts                  
-|   └── homepage.html                         #  the html template for the homepage 
-├── _sass
-|   ├── minimal-light.scss                    #  this file will be compiled into a CSS file to control the style of the page              
-|   └── minimal-light-no-dark-mode.scss       #  this file is similar to minimal-light.scss with the dark mode disabled
-├── assets                                    #  some files
-├── html_source_file                          #  compiled HTML files
-├── .gitignore                                #  this file specifies intentionally untracked files that Git should ignore
-├── CNAME                                     #  the custom domain, will be used by GitHub page sevice
-├── Gemfile                                   #  a RubyGems related file
-├── LICENSE                                   #  the license file
-├── README.md                                 #  the readme file (English)
-├── README_de.md                              #  the readme file (German)
-├── README_zh_Hans.md                         #  the readme file (Simplified Chinese)
-├── README_zh_Hant.md                         #  the readme file (Traditional Chinese)
-├── _config.yml                               #  the Jekyll configuration file, including some options of the page  
-└── index.md                                  #  the content of the index page, using Markdown
-```
+### 方式一：Fork 本仓库
 
-## Getting Started
+1. 点击右上角 **Fork** 按钮，复制本仓库到你的 GitHub 账户
+2. 将仓库重命名为 `你的用户名.github.io`
+3. 在仓库设置中启用 GitHub Pages 服务
+4. 修改 `_config.yml` 和 `index.md` 中的内容即可使用
 
-This template can be used in the following two ways: 
-- **Using with the GitHub Pages Service.** GitHub will provide you with a server to generate and host web pages.
-- **Using locally with Jekyll.** You may install Jekyll on your own computer and generate static web pages (i.e., HTML files) with this template. After that, you may upload the HTML files to your server.
+### 方式二：作为远程主题使用
 
-The detailed instructions are available below.
-
-
-### Using with the GitHub Pages Service
-
-There are two ways to use this template on GitHub:
-
-#### Fork this repository
-- Fork this repository (or [use this repository as a template](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/creating-a-repository-from-a-template)) and change the name to `your-username.github.io`.
-
-- Enable the GitHub pages for that repository following the steps [here](https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-github-pages-site#creating-your-site).
-
-#### Using this repository as a remote theme
-To use this theme, add the following to your repository's `_config.yml`:
+在你的仓库中添加 `_config.yml`，内容如下：
 
 ```yaml
-remote_theme: yaoyao-liu/minimal-light
+remote_theme: 你的用户名/minimal-light-modified
 ```
 
-Please note that adding the above line will directly apply all the default settings in this repository to yours.
+> 注：若你 Fork 后修改了仓库名，请将上述地址替换为你的仓库地址。
 
-If you hope to edit any files (e.g., `index.md`), you still need to copy them to your repository.
+## 配置说明
 
-### Using Locally with Jekyll
+配置文件 `_config.yml` 中支持以下自定义字段（在原版基础上未作修改，可直接沿用）：
 
-First, install [Ruby](https://www.ruby-lang.org/en/) and [Jekyll](https://jekyllrb.com/). The install instructions can be found here: <https://jekyllrb.com/docs/installation/#guides>
-
-Then, clone this repository:
-
-```bash
-git clone https://github.com/yaoyao-liu/minimal-light.git
-cd minimal-light
-```
-Install and run:
-
-```bash
-bundle install
-bundle add webrick
-bundle exec jekyll server
-```
-View the live page using `localhost`:
-<http://localhost:4000>. You can get the HTML files in `_site` folder.
-
-### Using the HTML version
-
-The compiled HTML files are available in the `html_source_file` folder. If you don't like Jekyll, you may directly edit and use the HTML version.
-
-## Customizing
-
-### Configuration variables
-
-The Minimal Light theme will respect the following variables, if set in your site's `_config.yml`:
-
-  ```yaml
-# Basic Information 
-title: Your Name
-position: Ph.D. Student
-affiliation: Your Affiliation
-email: yourname (at) example.edu
-
-# Search Engine Optimization (SEO)
-# The following information is used to improve the website traffic from search engines, e.g., Google.
-keywords: minimal light
-description: The Minimal Light is a simple and elegant jekyll theme for academic personal homepage.
-canonical: https://minimal-light-theme.yliu.me/
-
-# Links 
-# If you don't need one of them, you may delete the corresponding line.
-google_scholar: https://scholar.google.com/
-cv_link: assets/files/curriculum_vitae.pdf
-github_link: https://github.com/
-linkedin: https://www.linkedin.com/
-twitter: https://twitter.com/
-
-# Images (e.g., your profile picture and your website's favicon) 
-# "favicon" and "favicon_dark" are used for the light and dark modes, respectively. 
+```yaml
+title: 你的姓名
+position: 本科生/研究生等
+affiliation: 学校或单位
+email: yourname@example.edu
 avatar: ./assets/img/avatar.png
-favicon: ./assets/img/favicon.png
-favicon_dark: ./assets/img/favicon-dark.png
+# 更多配置请参考原版 Minimal Light 文档
+```
 
-# Footnote
-# You may use the option to disable the footnote, "Powered by Jekyll and Minimal Light theme."
-enable_footnote: true
+## 内容编辑
 
-# Auto Dark Mode
-# You may use the option to disable the automatic dark theme
-auto_dark_mode: true
+主页内容主要通过 `index.md`和`_includes`文件夹中的`.md`文件编写，支持 Markdown 语法。
 
-# Font
-# You can use this option to choose between Serif or Sans Serif fonts.
-font: "Serif" # or "Sans Serif"
+`publications`和`services`目前尚未插入到`index.md`中，如需插入可直接复制`index-2.md`两行。
 
-# Google Analytics ID
-# Please remove this if you don't use Google Analytics
-google_analytics: UA-111540567-4
-  ```
-### Edit `index.md`
+## 样式自定义
 
-Create `index.md` and add your personal information. It supports **Markdown** and **HTML** syntax.
+如需修改样式，可创建 `/assets/css/style.scss` 并导入原主题后添加自定义规则：
 
-### Edit included files
+```scss
+@import "{{ site.theme }}";
 
-There are two markdown files included in `index.md`. They are `_includes/publications.md` and `_includes/service.md`, respectively. These two files also support **Markdown** and **HTML** syntax. If you don't hope to include these two files, you may remove the following lines in `index.md`:
-https://github.com/yaoyao-liu/minimal-light/blob/b38070cd0b6bce45d8a885f3828549af8f82b7cb/index.md?plain=1#L21-L23
+/* 你的自定义 CSS */
+```
 
-If you hope to edit the publication list without changing the format, you may edit `_data/publications.yml`:
-https://github.com/yaoyao-liu/minimal-light/blob/77b1b3b31d4561091bcd739f37a2e1880e8b5ca5/_data/publications.yml#L3-L11
+如需修改 HTML 结构，可复制 `_layouts/homepage.html` 到你的项目中进行修改。
 
+## 许可证
 
-### Stylesheet
+本项目基于 [Creative Commons Zero v1.0 Universal](https://github.com/yaoyao-liu/minimal-light/blob/master/LICENSE) 许可证开源。
+你可以在遵守原许可证的前提下自由使用、修改和分发。
 
-If you'd like to add your own custom styles, you may edit `_sass/minimal-light.scss`.
+## 致谢
 
-### Layouts
+本项目基于以下开源项目构建，特此致谢：
 
-If you'd like to change the theme's HTML layout, you may edit `_layout/homepage.html`.
+- [yaoyao-liu/minimal-light](https://github.com/yaoyao-liu/minimal-light)
+- [pages-themes/minimal](https://github.com/pages-themes/minimal)
+- [orderedlist/minimal](https://github.com/orderedlist/minimal)
+- [al-folio](https://github.com/alshedivat/al-folio)
 
-## License
+如果你觉得这个修改版对你有帮助，欢迎 **Star ⭐ 本仓库**，也欢迎提交 Issue 或 Pull Request 帮助改进。
 
-This work is licensed under a [Creative Commons Zero v1.0 Universal](https://github.com/yaoyao-liu/minimal-light/blob/master/LICENSE) License.
+---
 
-## Acknowledgements
-
-Our project uses the source code from the following repositories:
-
-* [pages-themes/minimal](https://github.com/pages-themes/minimal)
-
-* [orderedlist/minimal](https://github.com/orderedlist/minimal)
-
-* [al-folio](https://github.com/alshedivat/al-folio)
+> 本项目为个人学术主页模板，旨在帮助初学者快速搭建展示个人项目与竞赛经历的主页。如有建议或问题，欢迎通过 GitHub Issues 反馈。
