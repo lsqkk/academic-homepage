@@ -44,9 +44,10 @@ main:
 
   - title: Personal Server Deployment and Operation
     year: 2025
-    description: Deployed and maintained a home server cluster on [Orange Pi](http://www.orangepi.cn/), stably running various services including Ollama (local large language model service), Nextcloud (private cloud storage), WordPress (website management), etc. Gained practical experience in Linux system administration, containerized application deployment, and intranet penetration techniques.
+    description: Deployed and maintained a home server cluster on Orange Pi, stably running various services including Ollama (local large language model service), Nextcloud (private cloud storage), WordPress (website management), etc. Gained practical experience in Linux system administration, containerized application deployment, and intranet penetration techniques.
     tech_stack: Linux, Docker, Orange Pi
     image: ./assets/img/project_orange_pi.png
+    link: https://github.com/lsqkk/OrangePi
 
   - title: Personal Independent Blog Development
     year: 2025
