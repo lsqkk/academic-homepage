@@ -41,6 +41,7 @@ main:
     tech_stack: Python, PaddlePaddle
     outcome: The project won a provincial third prize in the AIC competition.
     image: ./assets/img/project_forest_fire.png
+    link: https://github.com/lsqkk/fire-risk
 
   - title: Personal Server Deployment and Operation
     year: 2025
