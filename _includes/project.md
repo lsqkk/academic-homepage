@@ -1,49 +1,65 @@
-<h2 id="projects" style="margin: 2px 0px -15px;">Project Experience</h2>
-
-<div class="projects">
-<ol class="bibliography">
-
-{% for link in site.data.project.main %}
-
-<li {% if forloop.first %}style="margin-top: 30px;"{% endif %}>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="col-sm-3 abbr" style="position: relative; padding-right: 15px; padding-left: 15px; min-height: 120px;">
-    {% if link.image %} 
-<div style="width: 100%; height: 120px; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; border-radius: 4px; border: 1px solid #eee;">
-  <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width: 100%; height: 100%; object-fit: cover;">
-</div>
-{% if link.year %} 
-<abbr class="badge" style="position: absolute; top: 8px; right: 20px; background-color: rgba(0,0,0,0.75); color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; z-index: 10;">{{ link.year }}</abbr>
-{% endif %}
-{% elsif link.year %}
-<div style="width: 100%; height: 120px; display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; border-radius: 4px; border: 1px solid #eee;">
-  <abbr class="badge" style="background-color: rgba(0,0,0,0.75); color: white; padding: 4px 8px; border-radius: 3px; font-size: 12px;">{{ link.year }}</abbr>
-</div>
-{% endif %}
+<section class="homepage-block" id="projects">
+  <div class="section-heading">
+    <span class="section-kicker">Selected Work</span>
+    <h2>Project Experience</h2>
+    <p>A reverse-chronological timeline of research, engineering, and independent builds.</p>
   </div>
-<div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px; display: flex; flex-direction: column; justify-content: flex-start;">
-      <div class="title" style="font-size: 16px; font-weight: bold; margin-bottom: 4px;">{{ link.title }}</div>
-      {% if link.attribute %}
-      <div class="attribute" style="color: #666; font-style: italic; margin-bottom: 6px; font-size: 14px;">{{ link.attribute }}</div>
-      {% endif %}
-      <div class="description" style="margin-bottom: 8px; font-size: 14px; line-height: 1.4;">{{ link.description }}</div>
-      {% if link.tech_stack %}
-      <div class="tech-stack" style="margin-bottom: 4px; font-size: 13px;"><strong>Tech Stack:</strong> {{ link.tech_stack }}</div>
-      {% endif %}
-      {% if link.outcome %}
-      <div class="outcome" style="margin-bottom: 8px; font-size: 13px;"><strong>Outcome:</strong> {{ link.outcome }}</div>
-      {% endif %}
-    <div class="links" style="margin-top: 8px;">
-      {% if link.link %} 
-      <a href="{{ link.link }}" class="btn btn-sm z-depth-0" role="button" target="_blank" style="font-size:12px; padding: 2px 8px;">Link</a>
-      {% endif %}
-    </div>
+
+  {% assign sorted_projects = site.data.project.main | sort: "date" | reverse %}
+  {% assign visible_count = 5 %}
+
+  <div class="timeline timeline-projects" data-collapsible="projects">
+    {% for link in sorted_projects %}
+    <article class="timeline-item timeline-project {% if forloop.index > visible_count %}is-collapsed{% endif %}">
+      <div class="timeline-marker">
+        <span class="timeline-dot"></span>
+        <span class="timeline-line"></span>
+      </div>
+
+      <div class="timeline-content">
+        <div class="timeline-date">{{ link.date | date: "%b. %Y" }}</div>
+        <div class="timeline-card">
+          <div class="timeline-card-media">
+            {% if link.image %}
+            <img src="{{ link.image }}" alt="{{ link.title }} preview" class="timeline-thumb">
+            {% else %}
+            <div class="timeline-thumb timeline-thumb-placeholder">{{ link.date | date: "%Y" }}</div>
+            {% endif %}
+          </div>
+
+          <div class="timeline-card-body">
+            <h3>{{ link.title }}</h3>
+            {% if link.attribute %}
+            <p class="timeline-meta">{{ link.attribute }}</p>
+            {% endif %}
+            <p>{{ link.description }}</p>
+            {% if link.tech_stack %}
+            <p class="timeline-detail"><strong>Tech Stack:</strong> {{ link.tech_stack }}</p>
+            {% endif %}
+            {% if link.outcome %}
+            <p class="timeline-detail"><strong>Outcome:</strong> {{ link.outcome }}</p>
+            {% endif %}
+            {% if link.link %}
+            <div class="timeline-actions">
+              <a href="{{ link.link }}" class="timeline-link" target="_blank" rel="noopener">View Project</a>
+            </div>
+            {% endif %}
+          </div>
+        </div>
+      </div>
+    </article>
+    {% endfor %}
   </div>
-</div>
-</li>
-<br>
 
-{% endfor %}
-
-</ol>
-</div>
+  {% if sorted_projects.size > visible_count %}
+  <button
+    type="button"
+    class="timeline-toggle"
+    data-toggle-target="projects"
+    data-expand-label="Show all projects"
+    data-collapse-label="Show fewer projects"
+    aria-expanded="false">
+    Show all projects
+  </button>
+  {% endif %}
+</section>

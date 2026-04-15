@@ -1,40 +1,33 @@
-<h2 id="awards" style="margin: 2px 0px -15px;">Competitions & Awards</h2>
-
-<div class="awards">
-<ol class="bibliography">
-
-{% for link in site.data.awards.main %}
-
-<li {% if forloop.first %}style="margin-top: 30px;"{% endif %}>
-<div class="pub-row" style="display: flex; align-items: center;">
-  <div class="col-sm-3 abbr" style="position: relative; padding-right: 15px; padding-left: 15px; min-height: 120px;">
-    {% if link.image %} 
-<div style="width: 100%; height: 120px; overflow: hidden; display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; border-radius: 4px; border: 1px solid #eee;">
-  <img src="{{ link.image }}" class="teaser img-fluid z-depth-1" style="width: 100%; height: 100%; object-fit: cover;">
-</div>
-{% if link.year %} 
-<abbr class="badge" style="position: absolute; top: 8px; right: 20px; background-color: rgba(0,0,0,0.75); color: white; padding: 2px 6px; border-radius: 3px; font-size: 11px; z-index: 10;">{{ link.year }}</abbr>
-{% endif %}
-{% elsif link.year %}
-<div style="width: 100%; height: 120px; display: flex; align-items: center; justify-content: center; background-color: #f8f9fa; border-radius: 4px; border: 1px solid #eee;">
-  <abbr class="badge" style="background-color: rgba(0,0,0,0.75); color: white; padding: 4px 8px; border-radius: 3px; font-size: 12px;">{{ link.year }}</abbr>
-</div>
-{% endif %}
+<section class="homepage-block" id="awards">
+  <div class="section-heading">
+    <span class="section-kicker">Recognition</span>
+    <h2>Competitions & Awards</h2>
+    <p>Selected competition results, scholarships, and distinctions.</p>
   </div>
-<div class="col-sm-9" style="position: relative; padding-right: 15px; padding-left: 20px; display: flex; flex-direction: column; justify-content: flex-start;">
-      <div class="title" style="font-size: 16px; font-weight: bold; margin-bottom: 4px;">{{ link.title }}</div>
-      {% if link.award_description %}
-      <div class="award-description" style="color: #666; font-weight: bold; margin-bottom: 6px; font-size: 14px;">{{ link.award_description }}</div>
-      {% endif %}
-      {% if link.reason %}
-      <div class="reason" style="margin-bottom: 8px; font-size: 14px; line-height: 1.4;">{{ link.reason }}</div>
-      {% endif %}
+
+  <div class="feature-list">
+    {% assign sorted_awards = site.data.awards.main | sort: "date" | reverse %}
+    {% for link in sorted_awards %}
+    <article class="feature-card">
+      <div class="feature-media">
+        {% if link.image %}
+        <img src="{{ link.image }}" alt="{{ link.title }} image" class="feature-thumb">
+        {% else %}
+        <div class="feature-thumb feature-thumb-placeholder">{{ link.date | date: "%Y" }}</div>
+        {% endif %}
+      </div>
+
+      <div class="feature-body">
+        <div class="feature-date">{{ link.date | date: "%b. %Y" }}</div>
+        <h3>{{ link.title }}</h3>
+        {% if link.award_description %}
+        <p class="feature-highlight">{{ link.award_description }}</p>
+        {% endif %}
+        {% if link.reason %}
+        <p>{{ link.reason }}</p>
+        {% endif %}
+      </div>
+    </article>
+    {% endfor %}
   </div>
-</div>
-</li>
-<br>
-
-{% endfor %}
-
-</ol>
-</div>
+</section>

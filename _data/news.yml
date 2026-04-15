@@ -1,0 +1,24 @@
+main:
+  - date: 2025-12-01
+    title: National First Prize in CUPEC
+    description: Our team won the National First Prize in the China Undergraduate Physics Experiment Competition.
+
+  - date: 2025-06-01
+    title: University-Level Scholarship Awarded
+    description: I received the school-level scholarship from Xi'an Jiaotong University.
+
+  - date: 2025-05-01
+    title: Honorable Mention in MCM/ICM
+    description: Our team received the Honorable Mention in the Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling.
+
+  - date: 2025-04-01
+    title: Quark Blog Software Copyright Registered
+    description: The "Quark Blog" project was officially registered for software copyright.
+
+  - date: 2025-02-01
+    title: Personal Blog Launched
+    description: My personal technical blog "Quark Blog" (lsqkk.github.io) went live.
+
+  - date: 2025-01-01
+    title: Quark Autonomy Control Copyright Obtained
+    description: I obtained the software copyright for the "Quark Autonomy Control" project.
