@@ -5,6 +5,7 @@ main:
     start_date: 2025-09-01
     focus: Full undergraduate study in automation, intelligent systems, and engineering fundamentals.
     summary: Currently pursuing formal undergraduate training with an emphasis on control, software, and interdisciplinary engineering practice.
+    link: https://automation.xjtu.edu.cn
     highlights:
       - Programming in C
       - Principles of Automatic Control
@@ -17,6 +18,7 @@ main:
     start_date: 2023-09-01
     focus: Accelerated preparatory training bridging advanced pre-college coursework and early undergraduate practice.
     summary: Completed prerequisite coursework ahead of schedule, explored AI and software projects independently, maintained a technical blog, and built an early record in competitions and software copyrights.
+    link: https://bjb.xjtu.edu.cn/info/1071/1237.htm
     highlights:
       - Early research training
       - Project-based learning

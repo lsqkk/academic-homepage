@@ -36,6 +36,7 @@
 
   </head>
   <body>
+    <div class="cursor-glow" aria-hidden="true"></div>
     <div class="wrapper">
       <header>
         
@@ -58,6 +59,9 @@
         {% endif %}
 
         <br>
+        <div class="hero-typing" aria-live="polite">
+          <span id="typewriter-text"></span><span class="typing-caret" aria-hidden="true"></span>
+        </div>
         <br>
         <div class="social-icons">
         {% if site.google_scholar %}
@@ -75,6 +79,12 @@
         {% if site.github_link %}
         <a style="margin: 0 5px 0 0" href="{{ site.github_link }}">
           <i class="fab fa-github"></i>
+        </a>
+        {% endif %}
+
+        {% if site.homepage_link %}
+        <a style="margin: 0 5px 0 0" href="{{ site.homepage_link }}">
+          <i class="fas fa-house"></i>
         </a>
         {% endif %}
 

@@ -9,6 +9,9 @@
     {% assign education_items = site.data.education.main | sort: "start_date" | reverse %}
     {% for item in education_items %}
     <article class="education-card">
+      {% if item.link %}
+      <a class="education-card-link" href="{{ item.link }}" target="_blank" rel="noopener" aria-label="Open {{ item.school }} details"></a>
+      {% endif %}
       <div class="education-card-top">
         <div>
           <h3>{{ item.school }}</h3>

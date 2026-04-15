@@ -1,0 +1,34 @@
+about:
+  lead: I am Zhu Enze(朱恩泽), a 2025 undergraduate student in the School of Automation at Xi'an Jiaotong University(西安交通大学) and a member of the 2023 class of the Young Gifted Program (YGP, 少年班).
+  summary: My focus lies at the intersection of intelligent systems and software engineering, with a proven ability to solve practical problems through independent development and project implementation. My interests span machine learning, embedded systems, and full-stack application development.
+  focus_areas:
+    - Intelligent systems
+    - Software engineering
+    - Machine learning
+    - Embedded development
+    - Full-stack applications
+
+skills:
+  - title: Programming Languages
+    items:
+      - Python (data processing and machine learning)
+      - C/C++ (fundamental development)
+      - JavaScript/HTML/CSS (front-end development)
+      - Bash (Linux operations)
+
+  - title: Frameworks & Tools
+    items:
+      - TensorFlow / PyTorch / PaddlePaddle
+      - Linux, Git, Firebase, LaTeX
+      - Jekyll and static-site workflows
+
+  - title: Hardware & Platforms
+    items:
+      - Arduino development fundamentals
+      - Orange Pi deployment and maintenance
+      - Practical Linux server operation
+
+  - title: Languages
+    items:
+      - Chinese (Native)
+      - English (CET-6, proficient in reading academic literature)
