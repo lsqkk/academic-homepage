@@ -116,6 +116,8 @@ http://127.0.0.1:4000/
 bundle exec jekyll build
 ```
 
+更多细节和疑难排查，可参阅原版 [Minimal Light](https://github.com/yaoyao-liu/minimal-light) 主题文档。
+
 ## 如何编辑内容
 
 ### 个人信息与技能
