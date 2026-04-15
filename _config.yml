@@ -17,6 +17,24 @@ cv_link: assets/files/Zhu_Enze_s_Resume_en_.pdf  # 简历PDF文件路径
 github_link: https://github.com/lsqkk/  # GitHub主页链接
 homepage_link: https://lsqkk.github.io  # 个人主页链接
 
+# 模块显示控制
+section_visibility:
+  about: true
+  education: true
+  projects: true
+  awards: true
+  publications: false
+  services: false
+  skills: true
+  news: true
+  repo_board: true
+
+# GitHub 仓库看板
+repo_board:
+  owner: lsqkk
+  name: academic-homepage
+  url: https://github.com/lsqkk/academic-homepage
+
 # 图片设置
 # "avatar" 为个人头像，"favicon" 和 "favicon_dark" 分别用于浅色和深色模式的网站图标
 avatar: ./assets/img/avatar.jpg # 个人头像路径
@@ -49,9 +67,6 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - README_zh_Hans.md
-  - README_zh_Hant.md
-  - README_de.md
   - LICENSE
   - minimal-light.gemspec
   - html_source_file/
