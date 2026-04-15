@@ -2,6 +2,9 @@ document.addEventListener("DOMContentLoaded", function () {
   var toggles = document.querySelectorAll("[data-toggle-target]");
   var glow = document.querySelector(".cursor-glow");
   var typewriter = document.getElementById("typewriter-text");
+  var lightbox = document.getElementById("image-lightbox");
+  var lightboxImage = document.getElementById("image-lightbox-img");
+  var lightboxClose = document.getElementById("image-lightbox-close");
   var targetX = window.innerWidth / 2;
   var targetY = window.innerHeight / 2;
   var currentX = targetX;
@@ -79,5 +82,50 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     tickTypewriter();
+  }
+
+  if (lightbox && lightboxImage) {
+    var previewImages = document.querySelectorAll("header img, section img");
+
+    function openLightbox(image) {
+      lightboxImage.src = image.currentSrc || image.src;
+      lightboxImage.alt = image.alt || "Preview image";
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.classList.add("lightbox-open");
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      lightboxImage.src = "";
+      lightboxImage.alt = "";
+      document.body.classList.remove("lightbox-open");
+    }
+
+    previewImages.forEach(function (image) {
+      image.classList.add("lightbox-enabled");
+      image.addEventListener("click", function (event) {
+        event.preventDefault();
+        event.stopPropagation();
+        openLightbox(image);
+      });
+    });
+
+    lightbox.addEventListener("click", function (event) {
+      if (event.target === lightbox || event.target.getAttribute("data-lightbox-close") === "true") {
+        closeLightbox();
+      }
+    });
+
+    if (lightboxClose) {
+      lightboxClose.addEventListener("click", closeLightbox);
+    }
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape" && lightbox.classList.contains("is-open")) {
+        closeLightbox();
+      }
+    });
   }
 });

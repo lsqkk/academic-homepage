@@ -37,6 +37,13 @@
   </head>
   <body>
     <div class="cursor-glow" aria-hidden="true"></div>
+    <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
+      <div class="image-lightbox-backdrop" data-lightbox-close="true"></div>
+      <div class="image-lightbox-dialog" role="dialog" aria-modal="true" aria-label="Image preview">
+        <button type="button" class="image-lightbox-close" id="image-lightbox-close" aria-label="Close image preview">&times;</button>
+        <img id="image-lightbox-img" src="" alt="">
+      </div>
+    </div>
     <div class="wrapper">
       <header>
         

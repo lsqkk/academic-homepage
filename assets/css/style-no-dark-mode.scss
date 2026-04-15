@@ -18,6 +18,10 @@
 body {
   position: relative;
   overflow-x: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(150, 216, 249, 0.08), rgba(150, 216, 249, 0) 34%),
+    radial-gradient(circle at 85% 15%, rgba(233, 242, 252, 0.3), rgba(233, 242, 252, 0) 32%),
+    linear-gradient(180deg, #fcfdff 0%, #f8fbfe 52%, #fdfefe 100%);
 }
 
 .cursor-glow {
@@ -29,10 +33,10 @@ body {
   border-radius: 50%;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.72;
+  opacity: 0.64;
   background:
-    radial-gradient(circle, rgba(186, 233, 255, 0.4) 0%, rgba(150, 216, 249, 0.24) 18%, rgba(116, 196, 239, 0.16) 34%, rgba(92, 174, 232, 0.08) 52%, rgba(92, 174, 232, 0) 75%);
-  filter: blur(30px) saturate(125%);
+    radial-gradient(circle, rgba(189, 235, 255, 0.25) 0%, rgba(164, 222, 250, 0.22) 20%, rgba(138, 209, 245, 0.18) 38%, rgba(116, 196, 239, 0.12) 56%, rgba(92, 174, 232, 0.06) 72%, rgba(92, 174, 232, 0) 88%);
+  filter: blur(34px) saturate(118%);
 }
 
 .wrapper,
@@ -85,15 +89,15 @@ section > .homepage-block {
 .feature-card,
 .news-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.68) 0%, rgba(244, 248, 252, 0.54) 100%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.46);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.54) 0%, rgba(244, 248, 252, 0.36) 100%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.34);
   box-shadow:
-    0 20px 44px rgba(14, 53, 92, 0.1),
-    inset 0 1px 0 rgba(255, 255, 255, 0.68),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(22px) saturate(145%);
-  -webkit-backdrop-filter: blur(22px) saturate(145%);
+    0 20px 44px rgba(14, 53, 92, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.52),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(24px) saturate(136%);
+  -webkit-backdrop-filter: blur(24px) saturate(136%);
 }
 
 .education-card {
@@ -423,15 +427,90 @@ section > .homepage-block {
 .publication-card,
 .empty-state-card {
   background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.72) 0%, rgba(244, 248, 252, 0.56) 100%),
-    linear-gradient(135deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.08));
-  border: 1px solid rgba(255, 255, 255, 0.46);
+    linear-gradient(180deg, rgba(255, 255, 255, 0.56) 0%, rgba(244, 248, 252, 0.38) 100%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.24), rgba(255, 255, 255, 0.05));
+  border: 1px solid rgba(255, 255, 255, 0.34);
   box-shadow:
-    0 22px 48px rgba(14, 53, 92, 0.11),
-    inset 0 1px 0 rgba(255, 255, 255, 0.74),
-    inset 0 -1px 0 rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(24px) saturate(150%);
-  -webkit-backdrop-filter: blur(24px) saturate(150%);
+    0 22px 48px rgba(14, 53, 92, 0.085),
+    inset 0 1px 0 rgba(255, 255, 255, 0.56),
+    inset 0 -1px 0 rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(26px) saturate(138%);
+  -webkit-backdrop-filter: blur(26px) saturate(138%);
+}
+
+.lightbox-enabled {
+  cursor: zoom-in;
+}
+
+.image-lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.image-lightbox.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.image-lightbox-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 20, 34, 0.52);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.image-lightbox-dialog {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: min(92vw, 1180px);
+  max-height: 88vh;
+  padding: 1rem;
+  border-radius: 26px;
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  box-shadow: 0 28px 64px rgba(0, 0, 0, 0.24);
+  backdrop-filter: blur(22px) saturate(140%);
+  -webkit-backdrop-filter: blur(22px) saturate(140%);
+}
+
+.image-lightbox-dialog img {
+  display: block;
+  max-width: min(86vw, 1080px);
+  max-height: calc(88vh - 2rem);
+  border-radius: 18px;
+  box-shadow: 0 22px 50px rgba(7, 20, 38, 0.22);
+}
+
+.image-lightbox-close {
+  position: absolute;
+  top: 0.8rem;
+  right: 0.9rem;
+  z-index: 2;
+  width: 2.4rem;
+  height: 2.4rem;
+  border: 0;
+  border-radius: 999px;
+  background: rgba(10, 21, 35, 0.72);
+  color: #ffffff;
+  font-size: 1.45rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox-open {
+  overflow: hidden;
 }
 
 .about-panel {
@@ -598,6 +677,16 @@ section > .homepage-block {
   }
 }
 
+@media print, screen and (min-width: 961px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: calc(50% - 480px);
+    bottom: 0;
+    overflow-y: auto;
+  }
+}
+
 @media print, screen and (max-width: 960px) {
   section {
     border: 0 !important;
@@ -606,7 +695,7 @@ section > .homepage-block {
   .cursor-glow {
     width: 560px;
     height: 560px;
-    opacity: 0.52;
+    opacity: 0.44;
   }
 
   .skills-grid,
@@ -684,5 +773,13 @@ section > .homepage-block {
 
   .publication-media {
     min-height: 180px;
+  }
+
+  .image-lightbox {
+    padding: 1rem;
+  }
+
+  .image-lightbox-dialog {
+    max-width: calc(100vw - 2rem);
   }
 }
