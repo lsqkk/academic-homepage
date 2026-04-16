@@ -1,23 +1,17 @@
-# 基本信息
 title: Zhu Enze
 position: Undergraduate Student
-affiliation: Xi'an Jiaotong University  # 请填写您的所属机构/学校
+affiliation: Xi'an Jiaotong University
 email: jsxzznz@163.com
 
-# 搜索引擎优化 (SEO)
-# 以下信息用于提升网站在搜索引擎（如Google）中的可见性和流量
-keywords: xjtu automation  # 网站关键词，建议根据您的研究领域调整
+keywords: xjtu automation
 description: Zhu Enze is a 2025 undergraduate student in Automation at Xi'an Jiaotong University and a 2023 student in the YGP.
 canonical: https://lsqkk.github.io/academic-homepage
 
-# 个人链接
-# 如果不需要某个链接，可以删除对应的行
 google_scholar: https://scholar.google.com.hk/citations?hl=zh-CN&pli=1&user=t_HxDtcAAAAJ  # Google学术主页链接
 cv_link: assets/files/Zhu_Enze_s_Resume_en_.pdf  # 简历PDF文件路径
 github_link: https://github.com/lsqkk/  # GitHub主页链接
 homepage_link: https://lsqkk.github.io  # 个人主页链接
 
-# 模块显示控制
 section_visibility:
   about: true
   education: true
@@ -29,13 +23,11 @@ section_visibility:
   news: true
   repo_board: true
 
-# GitHub 仓库看板
 repo_board:
   owner: lsqkk
   name: academic-homepage
   url: https://github.com/lsqkk/academic-homepage
 
-# 列表默认显示条数
 list_preview_count:
   projects: 5
   news: 5
