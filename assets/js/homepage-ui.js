@@ -14,12 +14,14 @@ document.addEventListener("DOMContentLoaded", function () {
   toggles.forEach(function (toggle) {
     toggle.addEventListener("click", function () {
       var target = toggle.getAttribute("data-toggle-target");
-      var hiddenItems = document.querySelectorAll('[data-collapsible="' + target + '"] .is-collapsed');
+      var collapsible = document.querySelector('[data-collapsible="' + target + '"]');
       var expanded = toggle.getAttribute("aria-expanded") === "true";
 
-      hiddenItems.forEach(function (item) {
-        item.style.display = expanded ? "none" : "";
-      });
+      if (!collapsible) {
+        return;
+      }
+
+      collapsible.classList.toggle("is-expanded", !expanded);
 
       toggle.setAttribute("aria-expanded", expanded ? "false" : "true");
       toggle.textContent = expanded

@@ -348,7 +348,7 @@ section > .homepage-block {
   font-weight: 600;
 }
 
-.is-collapsed {
+[data-collapsible]:not(.is-expanded) .is-collapsed {
   display: none;
 }
 

@@ -6,7 +6,7 @@
   </div>
 
   {% assign sorted_projects = site.data.project.main | sort: "date" | reverse %}
-  {% assign visible_count = 5 %}
+  {% assign visible_count = site.list_preview_count.projects | default: 5 %}
 
   <div class="timeline timeline-projects" data-collapsible="projects">
     {% for link in sorted_projects %}

@@ -35,6 +35,12 @@ repo_board:
   name: academic-homepage
   url: https://github.com/lsqkk/academic-homepage
 
+# 列表默认显示条数
+list_preview_count:
+  projects: 5
+  news: 5
+  awards: 3
+
 # 图片设置
 # "avatar" 为个人头像，"favicon" 和 "favicon_dark" 分别用于浅色和深色模式的网站图标
 avatar: ./assets/img/avatar.jpg # 个人头像路径

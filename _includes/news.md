@@ -6,9 +6,10 @@
   </div>
 
   {% assign sorted_news = site.data.news.main | sort: "date" | reverse %}
-  <div class="timeline timeline-news">
+  {% assign visible_count = site.list_preview_count.news | default: 5 %}
+  <div class="timeline timeline-news" data-collapsible="news">
     {% for item in sorted_news %}
-    <article class="news-item">
+    <article class="news-item {% if forloop.index > visible_count %}is-collapsed{% endif %}">
       <div class="news-date">{{ item.date | date: "%b. %Y" }}</div>
       <div class="news-body">
         <span class="news-dot"></span>
@@ -22,4 +23,16 @@
     </article>
     {% endfor %}
   </div>
+
+  {% if sorted_news.size > visible_count %}
+  <button
+    type="button"
+    class="timeline-toggle"
+    data-toggle-target="news"
+    data-expand-label="Show all news"
+    data-collapse-label="Show fewer news items"
+    aria-expanded="false">
+    Show all news
+  </button>
+  {% endif %}
 </section>

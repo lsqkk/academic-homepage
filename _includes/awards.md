@@ -5,10 +5,11 @@
     <p>Selected competition results, scholarships, and distinctions.</p>
   </div>
 
-  <div class="feature-list">
+  <div class="feature-list" data-collapsible="awards">
     {% assign sorted_awards = site.data.awards.main | sort: "date" | reverse %}
+    {% assign visible_count = site.list_preview_count.awards | default: 3 %}
     {% for link in sorted_awards %}
-    <article class="feature-card">
+    <article class="feature-card {% if forloop.index > visible_count %}is-collapsed{% endif %}">
       <div class="feature-media">
         {% if link.image %}
         <img src="{{ link.image }}" alt="{{ link.title }} image" class="feature-thumb">
@@ -30,4 +31,16 @@
     </article>
     {% endfor %}
   </div>
+
+  {% if sorted_awards.size > visible_count %}
+  <button
+    type="button"
+    class="timeline-toggle"
+    data-toggle-target="awards"
+    data-expand-label="Show all awards"
+    data-collapse-label="Show fewer awards"
+    aria-expanded="false">
+    Show all awards
+  </button>
+  {% endif %}
 </section>
