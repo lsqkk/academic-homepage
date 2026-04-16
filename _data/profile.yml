@@ -3,8 +3,8 @@ about:
   summary: My focus lies at the intersection of intelligent systems and software engineering, with a proven ability to solve practical problems through independent development and project implementation. My interests span machine learning, embedded systems, and full-stack application development.
   focus_areas:
     - Intelligent systems
+    - Machine learning & Deep learning
     - Software engineering
-    - Machine learning
     - Embedded development
     - Full-stack applications
 
@@ -12,14 +12,14 @@ skills:
   - title: Programming Languages
     items:
       - Python (data processing and machine learning)
-      - C/C++ (fundamental development)
-      - JavaScript/HTML/CSS (front-end development)
+      - C / C++ (fundamental development)
+      - JS&TS / HTML / CSS / Astro (front-end development)
       - Bash (Linux operations)
 
   - title: Frameworks & Tools
     items:
       - TensorFlow / PyTorch / PaddlePaddle
-      - Linux, Git, Firebase, LaTeX
+      - Linux, SSH, Git, Firebase, LaTeX
       - Jekyll and static-site workflows
 
   - title: Hardware & Platforms

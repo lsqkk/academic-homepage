@@ -1,4 +1,59 @@
 main:
+  - title: Serverless SVG Card Generator with Bilibili API Integration and Vercel Deployment
+    date: 2026-01-24
+    attribute: YGP Preparatory AI Course Project
+    description: A serverless-friendly SVG card generator for Bilibili user profiles. Implements a clean API that fetches user stats via Bilibili web endpoints, transforms data with sanitization and formatting, then renders responsive vector cards using template-based SVG composition. Features a decoupled theme-color system, automated text wrapping for bios/titles, parallel async fetching with built-in caching, and HTML escaping for XSS prevention. Deployed on Vercel as serverless functions with a fallback Python script for local testing.
+    tech_stack: JavaScript, Python, HTML/CSS, SVG templates, Vercel
+    image: ./assets/img/project_bili_card.png
+    link: https://github.com/lsqkk/bili-card
+
+  - title: Personal Server Deployment and Operation
+    date: 2025-12-20
+    description: Deployed and maintained a home server cluster on Orange Pi, stably running various services including Ollama (local large language model service), Nextcloud (private cloud storage), WordPress (website management), etc. Gained practical experience in Linux system administration, containerized application deployment, and intranet penetration techniques.
+    tech_stack: Linux, Docker, Orange Pi
+    image: ./assets/img/project_orange_pi.png
+    link: https://github.com/lsqkk/OrangePi
+
+  - title: AI-Based Forest Fire Prediction Model
+    date: 2025-12-01
+    attribute: AIC Competition Project
+    description: Responsible for the multimodal data preprocessing pipeline, specifically handling the download, cleaning, and spatial interpolation of ERA5 reanalysis meteorological data to provide structured input for subsequent CNN and large language model training, and made innovations based on the YingLong Model.
+    tech_stack: Python, PaddlePaddle
+    outcome: The project won a provincial third prize in the AIC competition.
+    image: ./assets/img/project_forest_fire.png
+    link: https://github.com/lsqkk/fire-risk
+
+  - title: Serverless P2P File Transfer System
+    date: 2025-10-01
+    attribute: Personal Blog Service
+    description: To overcome the limitation of lacking a dedicated signaling server, I established a signaling channel using Firebase Realtime Database. Combined with WebRTC technology and public STUN servers, this system enabled direct peer-to-peer file transfer between browsers.
+    tech_stack: JavaScript (WebRTC API), Firebase
+    link: https://lsqkk.github.io/a/share
+    image: ./assets/img/project_p2p_file.png
+
+  - title: Cross-Platform PPT Remote Control Tool
+    date: 2025-09-01
+    attribute: Open Source Project
+    description: Designed and implemented a lightweight remote control solution based on web and local bridge programs. Utilized Firebase for real-time signaling synchronization and employed a local Node.js script to parse commands and simulate keyboard events, enabling seamless control of PC-side PPT presentations from a mobile device.
+    tech_stack: JavaScript, Node.js, Firebase Realtime Database
+    link: https://github.com/lsqkk/ppt-remote
+    image: ./assets/img/project_ppt_remote.png
+
+  - title: Personal Independent Blog Development
+    date: 2025-02-01
+    description: Designed, developed from scratch, and continuously maintain a static blog system for sharing technical notes and project summaries. The system achieves zero server backend deployment, with all code open-sourced. The site has obtained a software copyright.
+    tech_stack: JavaScript, HTML/CSS, Jekyll
+    link: https://lsqkk.github.io/
+    image: ./assets/img/project_blog.png
+
+  - title: U-Transformer Architecture for Meteorological Prediction
+    date: 2024-06-02
+    attribute: YGP Preparatory AI Course Project
+    description: Contributed to partial code development for a weather forecasting model based on a U-Transformer structure. The design integrates strengths from both Pangu and Fuxi large weather models, implemented using the domestic PaddlePaddle deep learning framework to support efficient spatial-temporal prediction.
+    tech_stack: Python, PaddlePaddle, NumPy
+    outcome: Functional prototype for multi-step meteorological variable forecasting.
+    image: ./assets/img/project_weather_prediction.png
+    link: ./assets/files/基于U-transformer架构的人工智能气象预测.ERQI CHEN, ENZE ZHU, TIAN HAO.pdf
 
   - title: CNN-based Animal Recognition System
     date: 2024-06-01
@@ -9,50 +64,6 @@ main:
     image: ./assets/img/project_animal_recognition.png
     link: ./assets/files/基于卷积神经网络(CNN)的动物识别.XINRAN DAI, ENZE ZHU, JIEMING ZHANG.pdf
 
-  - title: U-Transformer Architecture for Meteorological Prediction
-    date: 2024-10-01
-    attribute: YGP Preparatory AI Course Project
-    description: Contributed to partial code development for a weather forecasting model based on a U-Transformer structure. The design integrates strengths from both Pangu and Fuxi large weather models, implemented using the domestic PaddlePaddle deep learning framework to support efficient spatial-temporal prediction.
-    tech_stack: Python, PaddlePaddle, NumPy
-    outcome: Functional prototype for multi-step meteorological variable forecasting.
-    image: ./assets/img/project_weather_prediction.png
-    link: ./assets/files/基于U-transformer架构的人工智能气象预测.ERQI CHEN, ENZE ZHU, TIAN HAO.pdf
 
-  - title: Cross-Platform PPT Remote Control Tool
-    date: 2025-03-01
-    attribute: Open Source Project
-    description: Designed and implemented a lightweight remote control solution based on web and local bridge programs. Utilized Firebase for real-time signaling synchronization and employed a local Node.js script to parse commands and simulate keyboard events, enabling seamless control of PC-side PPT presentations from a mobile device.
-    tech_stack: JavaScript, Node.js, Firebase Realtime Database
-    link: https://github.com/lsqkk/ppt-remote
-    image: ./assets/img/project_ppt_remote.png
 
-  - title: Serverless P2P File Transfer System
-    date: 2025-02-01
-    attribute: Personal Blog Service
-    description: To overcome the limitation of lacking a dedicated signaling server, I established a signaling channel using Firebase Realtime Database. Combined with WebRTC technology and public STUN servers, this system enabled direct peer-to-peer file transfer between browsers.
-    tech_stack: JavaScript (WebRTC API), Firebase
-    link: https://lsqkk.github.io/a/share
-    image: ./assets/img/project_p2p_file.png
 
-  - title: AI-Based Forest Fire Prediction Model
-    date: 2025-04-01
-    attribute: AIC Competition Project
-    description: Responsible for the multimodal data preprocessing pipeline, specifically handling the download, cleaning, and spatial interpolation of ERA5 reanalysis meteorological data to provide structured input for subsequent CNN and large language model training, and made innovations based on the YingLong Model.
-    tech_stack: Python, PaddlePaddle
-    outcome: The project won a provincial third prize in the AIC competition.
-    image: ./assets/img/project_forest_fire.png
-    link: https://github.com/lsqkk/fire-risk
-
-  - title: Personal Server Deployment and Operation
-    date: 2025-01-01
-    description: Deployed and maintained a home server cluster on Orange Pi, stably running various services including Ollama (local large language model service), Nextcloud (private cloud storage), WordPress (website management), etc. Gained practical experience in Linux system administration, containerized application deployment, and intranet penetration techniques.
-    tech_stack: Linux, Docker, Orange Pi
-    image: ./assets/img/project_orange_pi.png
-    link: https://github.com/lsqkk/OrangePi
-
-  - title: Personal Independent Blog Development
-    date: 2025-02-01
-    description: Designed, developed from scratch, and continuously maintain a static blog system for sharing technical notes and project summaries. The system achieves zero server backend deployment, with all code open-sourced. The site has obtained a software copyright.
-    tech_stack: JavaScript, HTML/CSS, Jekyll
-    link: https://lsqkk.github.io/
-    image: ./assets/img/project_blog.png

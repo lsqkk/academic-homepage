@@ -13,13 +13,13 @@ main:
     image: ./assets/img/award_physics.jpg
 
   - title: Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)
-    date: 2025-04-01
+    date: 2025-12-11
     award_description: Provincial Third Prize
     reason: Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
     image: ./assets/img/award_aic.png
 
   - title: Xi'an Jiaotong University School-Level Scholarship
-    date: 2025-06-01
+    date: 2025-06-30
     award_description: Third class scholarship at the school level
     reason: Top 20% in comprehensive testing ranking.
     image: ./assets/img/award_scholarship.png
