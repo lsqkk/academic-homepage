@@ -1,15 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
   var toggles = document.querySelectorAll("[data-toggle-target]");
-  var glow = document.querySelector(".cursor-glow");
-  var typewriter = document.getElementById("typewriter-text");
   var lightbox = document.getElementById("image-lightbox");
   var lightboxImage = document.getElementById("image-lightbox-img");
   var lightboxClose = document.getElementById("image-lightbox-close");
   var repoBoard = document.querySelector(".repo-board");
-  var targetX = window.innerWidth / 2;
-  var targetY = window.innerHeight / 2;
-  var currentX = targetX;
-  var currentY = targetY;
 
   toggles.forEach(function (toggle) {
     toggle.addEventListener("click", function () {
@@ -30,72 +24,23 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  if (glow) {
-    window.addEventListener("mousemove", function (event) {
-      targetX = event.clientX;
-      targetY = event.clientY;
-    });
-
-    function animateGlow() {
-      currentX += (targetX - currentX) * 0.09;
-      currentY += (targetY - currentY) * 0.09;
-      glow.style.transform = "translate(" + currentX + "px, " + currentY + "px) translate(-50%, -50%)";
-      window.requestAnimationFrame(animateGlow);
-    }
-
-    animateGlow();
-  }
-
-  if (typewriter) {
-    var message = "To boundless horizons and countless souls, I am connected";
-    var typingDelay = 75;
-    var deletingDelay = 38;
-    var holdDelay = 3000;
-    var restartDelay = 600;
-    var index = 0;
-    var isDeleting = false;
-
-    function tickTypewriter() {
-      if (!isDeleting) {
-        index += 1;
-        typewriter.textContent = message.slice(0, index);
-
-        if (index === message.length) {
-          window.setTimeout(function () {
-            isDeleting = true;
-            tickTypewriter();
-          }, holdDelay);
-          return;
-        }
-
-        window.setTimeout(tickTypewriter, typingDelay);
-        return;
-      }
-
-      index -= 1;
-      typewriter.textContent = message.slice(0, index);
-
-      if (index === 0) {
-        isDeleting = false;
-        window.setTimeout(tickTypewriter, restartDelay);
-        return;
-      }
-
-      window.setTimeout(tickTypewriter, deletingDelay);
-    }
-
-    tickTypewriter();
-  }
-
   if (lightbox && lightboxImage) {
     var previewImages = document.querySelectorAll("header img, section img");
+    var lastFocusedImage = null;
 
     function openLightbox(image) {
+      lastFocusedImage = image;
       lightboxImage.src = image.currentSrc || image.src;
       lightboxImage.alt = image.alt || "Preview image";
       lightbox.classList.add("is-open");
       lightbox.setAttribute("aria-hidden", "false");
       document.body.classList.add("lightbox-open");
+
+      window.setTimeout(function () {
+        if (lightboxClose) {
+          lightboxClose.focus();
+        }
+      }, 0);
     }
 
     function closeLightbox() {
@@ -104,6 +49,11 @@ document.addEventListener("DOMContentLoaded", function () {
       lightboxImage.src = "";
       lightboxImage.alt = "";
       document.body.classList.remove("lightbox-open");
+
+      if (lastFocusedImage) {
+        lastFocusedImage.focus();
+        lastFocusedImage = null;
+      }
     }
 
     previewImages.forEach(function (image) {
@@ -113,6 +63,18 @@ document.addEventListener("DOMContentLoaded", function () {
         event.stopPropagation();
         openLightbox(image);
       });
+
+      if (!image.closest("a")) {
+        image.setAttribute("tabindex", "0");
+        image.setAttribute("role", "button");
+        image.setAttribute("aria-label", "Open image preview: " + (image.alt || "image"));
+        image.addEventListener("keydown", function (event) {
+          if (event.key === "Enter" || event.key === " ") {
+            event.preventDefault();
+            openLightbox(image);
+          }
+        });
+      }
     });
 
     lightbox.addEventListener("click", function (event) {

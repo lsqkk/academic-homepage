@@ -1,4 +1,34 @@
 main:
+  - title: 'CoS-VRL: Chain-of-Steps Verifiable Reinforcement Learning for Video Diffusion Reasoning'
+    date: 2026-10-12
+    attribute: Research Collaboration
+    description: A research collaboration with Chengqi Shi, a 2023 YGP classmate, computer science undergraduate, and embodied intelligence researcher. CoS-VRL estimates how much each denoising step contributes to the final reasoning outcome using verifiable rewards, and reinforces only the genuinely critical denoising stages. This makes reasoning with video diffusion models more accurate while reducing training cost.
+    tech_stack: Video diffusion models, Reinforcement learning, Verifiable rewards, PyTorch
+    outcome: Ongoing research collaboration on step-level reinforcement for video diffusion reasoning.
+
+  - title: AI-Assisted Laparoscopic Surgery System
+    date: 2026-10-02
+    attribute: Research Project
+    description: An early-stage project at the Institute of Artificial Intelligence and Robotics (IAIR) led by Prof. Jiayi Wu, building an AI-assisted surgical system based on laparoscopic video. Currently contributing to the research groundwork as the project begins.
+    tech_stack: Computer vision, Surgical video analysis, Deep learning
+    outcome: Project recently launched; research groundwork in progress.
+
+  - title: 'Chuang (窗): An Open-Source Linux Desktop Sky Window'
+    date: 2026-09-10
+    attribute: Open Source Project
+    description: A Linux desktop application that presents a live, physically grounded view of the sky outside, including the sun, moon phase, about 1,600 stars, real weather, and shadows cast on a windowsill. Astronomy and shadow calculations run fully offline, weather is mirrored from Open-Meteo when available, and the scene responds to rain, snow, fog, and cloud cover. The app also supports wallpaper mode, a compact always-on-top mode, system-tray integration, and a four-language interface.
+    tech_stack: Python, GTK4, libadwaita, Cairo, Open-Meteo
+    outcome: Released under the MIT license with CI-built .deb packages.
+    image: ./assets/img/project_chuang.jpg
+    link: https://github.com/lsqkk/Chuang
+
+  - title: RACDataset Fitness Video Understanding
+    date: 2026-04-10
+    attribute: Research Project
+    description: A computer vision project on the RACDataset fitness and exercise videos, supervised by Prof. Wang Hang at Xi'an Jiaotong University. Responsible for downloading and processing more than 20,000 videos spanning 63 action categories, and for designing a video segmentation algorithm. Continuing to contribute to follow-up work.
+    tech_stack: Python, Computer vision, Video processing, Data pipeline
+    outcome: Dataset pipeline and segmentation algorithm delivered; follow-up research ongoing.
+
   - title: Serverless SVG Card Generator with Bilibili API Integration and Vercel Deployment
     date: 2026-01-24
     attribute: Open Source Project
@@ -23,6 +53,13 @@ main:
     outcome: The project won a provincial third prize in the AIC competition.
     image: ./assets/img/project_forest_fire.png
     link: https://github.com/lsqkk/fire-risk
+
+  - title: farmXpert (iPheno) Agricultural Vision App
+    date: 2025-10-20
+    attribute: Research Observership
+    description: A research observership with undergraduate advisor Prof. Sun Hequan on farmXpert (iPheno), an interdisciplinary project spanning automatic control, computer vision, and agriculture that applies vision models to crop disease and pest problems. Participated as an observer and learner, studied the project's research pipeline, and proposed an app design concept. Did not take part in the algorithm or model development.
+    tech_stack: Computer vision, Agricultural AI, Mobile application design
+    outcome: Contributed an app design concept and gained an understanding of the research pipeline.
 
   - title: Serverless P2P File Transfer System
     date: 2025-10-01
@@ -64,7 +101,3 @@ main:
     outcome: Course project submitted with full pipeline documentation and performance analysis.
     image: ./assets/img/project_animal_recognition.png
     link: ./assets/files/基于卷积神经网络(CNN)的动物识别.XINRAN DAI, ENZE ZHU, JIEMING ZHANG.pdf
-
-
-
-

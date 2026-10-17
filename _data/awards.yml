@@ -1,10 +1,26 @@
 main:
+  - title: Xi'an Jiaotong University Third-Class Scholarship (2025-2026)
+    date: 2026-10-08
+    award_description: Third-Class University Scholarship · Rank 23/185 (Top 13%)
+    reason: Awarded for the 2025-2026 academic year, the first year of undergraduate study, with a major ranking of 23 out of 185 students.
 
-  - title: Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM)
-    date: 2025-05-01
+  - title: China International College Students' Innovation Competition — Industry Track
+    date: 2026-08-15
+    award_description: University-Level Silver Award
+    reason: Team member on "Label Correction for Intelligent Cytology-Based Cervical Cancer Diagnosis" (基于标签校正的宫颈癌细胞学图像智能诊断方法).
+    image: ./assets/img/award_innovation_2026.jpg
+
+  - title: Mathematical Contest in Modeling (MCM) 2026
+    date: 2026-05-01
     award_description: Honorable Mention
-    reason: Responsible for mathematical model construction, paper writing, and data visualization.
-    image: ./assets/img/award_mcm.png
+    reason: Team member alongside Li Haoxuan and Shi Chengqi, advised by Prof. Long Chen.
+    image: ./assets/img/award_mcm_2026.jpg
+
+  - title: Outstanding Communist Youth League Cadre
+    date: 2026-04-20
+    award_description: University-Level Honor
+    reason: Recognized for outstanding performance in Communist Youth League work during 2025.
+    image: ./assets/img/award_youth_league_2026.jpg
 
   - title: China Undergraduate Physics Experiment Competition
     date: 2025-12-01
@@ -18,8 +34,14 @@ main:
     reason: Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
     image: ./assets/img/award_aic.png
 
-  - title: Xi'an Jiaotong University School-Level Scholarship
-    date: 2025-06-30
-    award_description: Third class scholarship at the school level
-    reason: Top 20% in comprehensive testing ranking.
-    image: ./assets/img/award_scholarship.png
+  - title: Xi'an Jiaotong University Scholarship (2024-2025)
+    date: 2025-12-12
+    award_description: University-Level Third-Class Scholarship
+    reason: Awarded for the 2024-2025 academic year for ranking in the top 20% of the comprehensive assessment.
+    image: ./assets/img/award_scholarship.jpg
+
+  - title: Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM)
+    date: 2025-05-01
+    award_description: Honorable Mention
+    reason: Responsible for mathematical model construction, paper writing, and data visualization.
+    image: ./assets/img/award_mcm.png

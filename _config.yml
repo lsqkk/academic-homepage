@@ -1,10 +1,11 @@
 title: Zhu Enze
-position: Undergraduate Student
+position: Undergraduate Student in Automation
 affiliation: Xi'an Jiaotong University
+affiliation_link: https://www.xjtu.edu.cn
 email: jsxzznz@163.com
 
 keywords: xjtu automation
-description: Zhu Enze is a 2025 undergraduate student in Automation at Xi'an Jiaotong University and a 2023 student in the YGP.
+description: Zhu Enze is a second-year undergraduate student in Automation at Xi'an Jiaotong University and a 2023 student in the YGP.
 canonical: https://lsqkk.github.io/academic-homepage
 
 google_scholar: https://scholar.google.com.hk/citations?hl=zh-CN&pli=1&user=t_HxDtcAAAAJ  # Google学术主页链接
@@ -29,9 +30,9 @@ repo_board:
   url: https://github.com/lsqkk/academic-homepage
 
 list_preview_count:
-  projects: 5
-  news: 5
-  awards: 3
+  projects: 8
+  news: 6
+  awards: 4
 
 # 图片设置
 # "avatar" 为个人头像，"favicon" 和 "favicon_dark" 分别用于浅色和深色模式的网站图标

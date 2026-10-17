@@ -1,11 +1,51 @@
 main:
+  - date: 2026-10-12
+    title: CoS-VRL Research Collaboration Started
+    description: Began CoS-VRL with Chengqi Shi, applying step-level verifiable reinforcement learning to make video diffusion reasoning more accurate and cheaper to train.
+
+  - date: 2026-10-08
+    title: 2025-2026 University Scholarship Awarded
+    description: Received the third-class university scholarship for the 2025-2026 academic year, ranking 23/185 (top 13%) in the major.
+
+  - date: 2026-10-02
+    title: AI-Assisted Surgery Project Begins
+    description: Joined Prof. Jiayi Wu's project at the Institute of Artificial Intelligence and Robotics on AI-assisted laparoscopic surgery.
+
+  - date: 2026-09-20
+    title: Joined XJTU RoboCup Vision Group
+    description: Became a member of the Xi'an Jiaotong University RoboCup vision group and started preparing for the RoboCup 2027 competition.
+
+  - date: 2026-09-10
+    title: 'Released "Chuang" (窗) Desktop Application'
+    description: Published Chuang, an open-source Linux desktop app that renders the real sky, weather, and windowsill shadows in real time.
+
+  - date: 2026-08-15
+    title: Silver Award at the 2026 Innovation Competition
+    description: Our team received a university-level silver award in the industry track of the 2026 China International College Students' Innovation Competition for label-corrected cervical cytology image diagnosis.
+
+  - date: 2026-05-01
+    title: Honorable Mention in MCM 2026
+    description: Our team received an Honorable Mention in the 2026 Mathematical Contest in Modeling.
+
+  - date: 2026-04-20
+    title: Outstanding Communist Youth League Cadre
+    description: Recognized by Xi'an Jiaotong University as an outstanding Communist Youth League cadre for 2025.
+
+  - date: 2026-04-10
+    title: Joined the RACDataset Video Project
+    description: Started working with Prof. Wang Hang on the RACDataset fitness video project, covering 63 action categories and more than 20,000 videos.
+
+  - date: 2025-12-12
+    title: 2024-2025 University-Level Scholarship Awarded
+    description: Received the university-level third-class scholarship from Xi'an Jiaotong University for the 2024-2025 academic year.
+
   - date: 2025-12-01
     title: National First Prize in CUPEC
     description: Our team won the National First Prize in the China Undergraduate Physics Experiment Competition.
 
-  - date: 2025-06-01
-    title: University-Level Scholarship Awarded
-    description: I received the school-level scholarship from Xi'an Jiaotong University.
+  - date: 2025-10-20
+    title: Research Observership at farmXpert (iPheno)
+    description: Completed a research observership with Prof. Sun Hequan, studying the farmXpert (iPheno) agricultural vision project and proposing an app design concept.
 
   - date: 2025-05-01
     title: Honorable Mention in MCM/ICM

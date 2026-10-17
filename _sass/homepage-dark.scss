@@ -1,0 +1,81 @@
+// Dark theme for the shared homepage components.
+// Imported only by the auto-dark-mode stylesheet.
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hp-bg: #15181d;
+    --hp-surface: #191d23;
+    --hp-surface-soft: #1d2229;
+    --hp-border: #2b323c;
+    --hp-border-strong: #3d4754;
+    --hp-text: #e7ebf0;
+    --hp-text-muted: #a4aebb;
+    --hp-accent: #7fb7e4;
+    --hp-accent-hover: #a6cef0;
+    --hp-accent-soft: rgba(127, 183, 228, 0.1);
+    --hp-rail: #333b46;
+  }
+
+  body {
+    background: var(--hp-bg);
+    color: var(--hp-text);
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--hp-text);
+  }
+
+  strong {
+    color: var(--hp-text);
+  }
+
+  a {
+    color: var(--hp-accent);
+  }
+
+  a:hover {
+    color: var(--hp-accent-hover);
+  }
+
+  .header-affiliation a {
+    color: var(--hp-text);
+  }
+
+  .social-icons a:hover {
+    background: var(--hp-accent-soft);
+    color: var(--hp-accent) !important;
+  }
+
+  .timeline-link,
+  .timeline-toggle {
+    background: transparent;
+    color: var(--hp-accent);
+  }
+
+  .timeline-link:hover,
+  .timeline-toggle:hover {
+    background: var(--hp-accent-soft);
+    color: var(--hp-accent-hover);
+  }
+
+  .publication-badge {
+    background: rgba(9, 14, 20, 0.86);
+  }
+
+  .image-lightbox-backdrop {
+    background: rgba(2, 6, 10, 0.76);
+  }
+
+  .image-lightbox-close {
+    background: #2a323d;
+  }
+
+  .image-lightbox-close:hover {
+    background: #39434f;
+  }
+}
