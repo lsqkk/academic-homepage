@@ -305,8 +305,17 @@ section > .homepage-block:first-child {
 .education-card-link {
   position: absolute;
   inset: 0;
-  z-index: 2;
+  z-index: 0;
   border-radius: var(--hp-radius);
+}
+
+/* Keep card content above the full-card overlay so inline links stay clickable. */
+.education-card-top,
+.education-focus,
+.education-summary,
+.education-tags {
+  position: relative;
+  z-index: 1;
 }
 
 .education-card-top {
@@ -520,6 +529,16 @@ section > .homepage-block:first-child {
 .award-body h3 {
   margin: 0 0 0.3rem;
   font-size: 1.02rem;
+}
+
+.award-body h3 a,
+.education-card h3 a {
+  color: inherit;
+}
+
+.award-body h3 a:hover,
+.education-card h3 a:hover {
+  color: var(--hp-accent);
 }
 
 .award-body p {

@@ -2,25 +2,42 @@ main:
   - title: 'CoS-VRL: Chain-of-Steps Verifiable Reinforcement Learning for Video Diffusion Reasoning'
     date: 2026-10-12
     attribute: Research Collaboration
-    description: A research collaboration with Chengqi Shi, a 2023 YGP classmate, computer science undergraduate, and embodied intelligence researcher. CoS-VRL estimates how much each denoising step contributes to the final reasoning outcome using verifiable rewards, and reinforces only the genuinely critical denoising stages. This makes reasoning with video diffusion models more accurate while reducing training cost.
-    tech_stack: Video diffusion models, Reinforcement learning, Verifiable rewards, PyTorch
+    description: A research collaboration with [Chengqi Shi](https://1scq.github.io/), a 2023 YGP classmate, computer science undergraduate, and embodied intelligence researcher. CoS-VRL estimates how much each denoising step contributes to the final reasoning outcome using verifiable rewards, and reinforces only the genuinely critical denoising stages. This makes reasoning with video diffusion models more accurate while reducing training cost.
+    tech_stack: Video diffusion models, Reinforcement learning, Verifiable rewards, [PyTorch](https://pytorch.org/)
     outcome: Ongoing research collaboration on step-level reinforcement for video diffusion reasoning.
+    resume_rank: 1
+    resume_title: 'CoS-VRL: Step-Level Verifiable RL for Video Diffusion Reasoning'
+    resume_summary: Research collaboration on step-level verifiable reinforcement learning for video diffusion reasoning, estimating how much each denoising step contributes to the final answer.
+    resume_bullets:
+      - "Estimate each denoising step's contribution to the final reasoning outcome with verifiable rewards."
+      - "Reinforce only the genuinely critical denoising stages, improving reasoning accuracy while reducing training cost."
 
   - title: AI-Assisted Laparoscopic Surgery System
     date: 2026-10-02
     attribute: Research Project
-    description: An early-stage project at the Institute of Artificial Intelligence and Robotics (IAIR) led by Prof. Jiayi Wu, building an AI-assisted surgical system based on laparoscopic video. Currently contributing to the research groundwork as the project begins.
+    description: An early-stage project at the [Institute of Artificial Intelligence and Robotics (IAIR)](https://iair.xjtu.edu.cn/) led by Prof. Jiayi Wu, building an AI-assisted surgical system based on laparoscopic video. Currently contributing to the research groundwork as the project begins.
     tech_stack: Computer vision, Surgical video analysis, Deep learning
     outcome: Project recently launched; research groundwork in progress.
+    resume_rank: 2
+    resume_title: AI-Assisted Laparoscopic Surgery System
+    resume_summary: Early-stage research at IAIR on an AI-assisted surgical system built on laparoscopic video.
+    resume_bullets:
+      - "Contributing to the research groundwork for a laparoscopic-video-based surgical assistance system."
 
   - title: 'Chuang (窗): An Open-Source Linux Desktop Sky Window'
     date: 2026-09-10
     attribute: Open Source Project
-    description: A Linux desktop application that presents a live, physically grounded view of the sky outside, including the sun, moon phase, about 1,600 stars, real weather, and shadows cast on a windowsill. Astronomy and shadow calculations run fully offline, weather is mirrored from Open-Meteo when available, and the scene responds to rain, snow, fog, and cloud cover. The app also supports wallpaper mode, a compact always-on-top mode, system-tray integration, and a four-language interface.
-    tech_stack: Python, GTK4, libadwaita, Cairo, Open-Meteo
+    description: A Linux desktop application that presents a live, physically grounded view of the sky outside, including the sun, moon phase, about 1,600 stars, real weather, and shadows cast on a windowsill. Astronomy and shadow calculations run fully offline, weather is mirrored from [Open-Meteo](https://open-meteo.com/) when available, and the scene responds to rain, snow, fog, and cloud cover. The app also supports wallpaper mode, a compact always-on-top mode, system-tray integration, and a four-language interface.
+    tech_stack: "[Python](https://www.python.org/), [GTK4](https://www.gtk.org/), [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/), Cairo, [Open-Meteo](https://open-meteo.com/)"
     outcome: Released under the MIT license with CI-built .deb packages.
     image: ./assets/img/project_chuang.jpg
     link: https://github.com/lsqkk/Chuang
+    resume_rank: 3
+    resume_title: 'Chuang: Open-Source Linux Sky Window'
+    resume_summary: An open-source Linux desktop app rendering a physically grounded live sky with stars, moon phase, weather, and windowsill shadows.
+    resume_bullets:
+      - "Built offline astronomy and shadow calculations, real-time weather integration, wallpaper and always-on-top modes, and a four-language UI."
+      - "Released under the MIT license with CI-built .deb packages."
 
   - title: RACDataset Fitness Video Understanding
     date: 2026-04-10
@@ -28,31 +45,44 @@ main:
     description: A computer vision project on the RACDataset fitness and exercise videos, supervised by Prof. Wang Hang at Xi'an Jiaotong University. Responsible for downloading and processing more than 20,000 videos spanning 63 action categories, and for designing a video segmentation algorithm. Continuing to contribute to follow-up work.
     tech_stack: Python, Computer vision, Video processing, Data pipeline
     outcome: Dataset pipeline and segmentation algorithm delivered; follow-up research ongoing.
+    resume_rank: 4
+    resume_title: RACDataset Fitness Video Understanding
+    resume_tech: Python, Computer vision, Video processing
+    resume_summary: Computer vision research on fitness and exercise videos spanning 63 action categories and more than 20,000 videos.
+    resume_bullets:
+      - "Built the data pipeline and designed a video segmentation algorithm for a 20,000+ video dataset."
+      - "Dataset pipeline and segmentation algorithm delivered; follow-up research ongoing."
 
   - title: Serverless SVG Card Generator with Bilibili API Integration and Vercel Deployment
     date: 2026-01-24
     attribute: Open Source Project
-    description: A serverless-friendly SVG card generator for Bilibili user profiles. Implements a clean API that fetches user stats via Bilibili web endpoints, transforms data with sanitization and formatting, then renders responsive vector cards using template-based SVG composition. Features a decoupled theme-color system, automated text wrapping for bios/titles, parallel async fetching with built-in caching, and HTML escaping for XSS prevention. Deployed on Vercel as serverless functions with a fallback Python script for local testing.
-    tech_stack: JavaScript, Python, HTML/CSS, SVG templates, Vercel
+    description: A serverless-friendly SVG card generator for Bilibili user profiles. Implements a clean API that fetches user stats via Bilibili web endpoints, transforms data with sanitization and formatting, then renders responsive vector cards using template-based SVG composition. Features a decoupled theme-color system, automated text wrapping for bios/titles, parallel async fetching with built-in caching, and HTML escaping for XSS prevention. Deployed on [Vercel](https://vercel.com/) as serverless functions with a fallback Python script for local testing.
+    tech_stack: JavaScript, Python, HTML/CSS, SVG templates, [Vercel](https://vercel.com/)
     image: ./assets/img/project_bili_card.png
     link: https://github.com/lsqkk/bili-card
 
   - title: Personal Server Deployment and Operation
     date: 2025-12-20
     attribute: Open Source Project
-    description: Deployed and maintained a home server cluster on Orange Pi, stably running various services including Ollama (local large language model service), Nextcloud (private cloud storage), WordPress (website management), etc. Gained practical experience in Linux system administration, containerized application deployment, and intranet penetration techniques.
-    tech_stack: Linux, Docker, Orange Pi
+    description: Deployed and maintained a home server cluster on [Orange Pi](http://www.orangepi.org/), stably running various services including [Ollama](https://ollama.com/) (local large language model service), [Nextcloud](https://nextcloud.com/) (private cloud storage), [WordPress](https://wordpress.org/) (website management), etc. Gained practical experience in Linux system administration, containerized application deployment, and intranet penetration techniques.
+    tech_stack: Linux, [Docker](https://www.docker.com/), [Orange Pi](http://www.orangepi.org/)
     image: ./assets/img/project_orange_pi.png
     link: https://github.com/lsqkk/OrangePi
 
   - title: AI-Based Forest Fire Prediction Model
     date: 2025-12-01
     attribute: AIC Competition Project
-    description: Responsible for the multimodal data preprocessing pipeline, specifically handling the download, cleaning, and spatial interpolation of ERA5 reanalysis meteorological data to provide structured input for subsequent CNN and large language model training, and made innovations based on the YingLong Model.
-    tech_stack: Python, PaddlePaddle
+    description: Responsible for the multimodal data preprocessing pipeline, specifically handling the download, cleaning, and spatial interpolation of [ERA5 reanalysis meteorological data](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels) to provide structured input for subsequent CNN and large language model training, and made innovations based on the YingLong Model.
+    tech_stack: Python, [PaddlePaddle](https://www.paddlepaddle.org.cn/)
     outcome: The project won a provincial third prize in the AIC competition.
     image: ./assets/img/project_forest_fire.png
     link: https://github.com/lsqkk/fire-risk
+    resume_rank: 5
+    resume_title: AI-Based Forest Fire Prediction Model
+    resume_summary: Built the multimodal ERA5 meteorological data pipeline for a forest fire prediction model, from download and cleaning to spatial interpolation.
+    resume_bullets:
+      - "Prepared structured meteorological inputs for CNN and LLM training and contributed innovations based on the YingLong model."
+      - "Won a provincial third prize in the AIC competition."
 
   - title: farmXpert (iPheno) Agricultural Vision App
     date: 2025-10-20
@@ -64,31 +94,31 @@ main:
   - title: Serverless P2P File Transfer System
     date: 2025-10-01
     attribute: Personal Blog Service
-    description: To overcome the limitation of lacking a dedicated signaling server, I established a signaling channel using Firebase Realtime Database. Combined with WebRTC technology and public STUN servers, this system enabled direct peer-to-peer file transfer between browsers.
-    tech_stack: JavaScript (WebRTC API), Firebase
+    description: To overcome the limitation of lacking a dedicated signaling server, I established a signaling channel using [Firebase Realtime Database](https://firebase.google.com/products/realtime-database). Combined with [WebRTC](https://webrtc.org/) technology and public STUN servers, this system enabled direct peer-to-peer file transfer between browsers.
+    tech_stack: JavaScript ([WebRTC API](https://webrtc.org/)), [Firebase](https://firebase.google.com/)
     link: https://lsqkk.github.io/a/share
     image: ./assets/img/project_p2p_file.png
 
   - title: Cross-Platform PPT Remote Control Tool
     date: 2025-09-01
     attribute: Open Source Project
-    description: Designed and implemented a lightweight remote control solution based on web and local bridge programs. Utilized Firebase for real-time signaling synchronization and employed a local Node.js script to parse commands and simulate keyboard events, enabling seamless control of PC-side PPT presentations from a mobile device.
-    tech_stack: JavaScript, Node.js, Firebase Realtime Database
+    description: Designed and implemented a lightweight remote control solution based on web and local bridge programs. Utilized [Firebase](https://firebase.google.com/) for real-time signaling synchronization and employed a local [Node.js](https://nodejs.org/) script to parse commands and simulate keyboard events, enabling seamless control of PC-side PPT presentations from a mobile device.
+    tech_stack: JavaScript, [Node.js](https://nodejs.org/), [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
     link: https://github.com/lsqkk/ppt-remote
     image: ./assets/img/project_ppt_remote.png
 
   - title: Personal Independent Blog Development
     date: 2025-02-01
     description: Designed, developed from scratch, and continuously maintain a static blog system for sharing technical notes and project summaries. The system achieves zero server backend deployment, with all code open-sourced. The site has obtained a software copyright.
-    tech_stack: JavaScript, HTML/CSS, Jekyll
+    tech_stack: JavaScript, HTML/CSS, [Jekyll](https://jekyllrb.com/)
     link: https://lsqkk.github.io/
     image: ./assets/img/project_blog.png
 
   - title: U-Transformer Architecture for Meteorological Prediction
     date: 2024-06-02
     attribute: YGP Preparatory AI Course Project
-    description: Contributed to partial code development for a weather forecasting model based on a U-Transformer structure. The design integrates strengths from both Pangu and Fuxi large weather models, implemented using the domestic PaddlePaddle deep learning framework to support efficient spatial-temporal prediction.
-    tech_stack: Python, PaddlePaddle, NumPy
+    description: Contributed to partial code development for a weather forecasting model based on a U-Transformer structure. The design integrates strengths from both Pangu and Fuxi large weather models, implemented using the domestic [PaddlePaddle](https://www.paddlepaddle.org.cn/) deep learning framework to support efficient spatial-temporal prediction.
+    tech_stack: Python, [PaddlePaddle](https://www.paddlepaddle.org.cn/), NumPy
     outcome: Functional prototype for multi-step meteorological variable forecasting.
     image: ./assets/img/project_weather_prediction.png
     link: ./assets/files/基于U-transformer架构的人工智能气象预测.ERQI CHEN, ENZE ZHU, TIAN HAO.pdf
@@ -97,7 +127,7 @@ main:
     date: 2024-06-01
     attribute: YGP Preparatory AI Course Project
     description: Responsible for dataset downloading, preprocessing, and final reporting. The innovation lies in training the CNN from scratch without freezing earlier layers, along with introducing improvements in pooling strategies and cosine annealing scheduling to enhance convergence and accuracy.
-    tech_stack: Python, PyTorch, OpenCV
+    tech_stack: Python, [PyTorch](https://pytorch.org/), [OpenCV](https://opencv.org/)
     outcome: Course project submitted with full pipeline documentation and performance analysis.
     image: ./assets/img/project_animal_recognition.png
     link: ./assets/files/基于卷积神经网络(CNN)的动物识别.XINRAN DAI, ENZE ZHU, JIEMING ZHANG.pdf

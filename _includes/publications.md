@@ -23,8 +23,8 @@
 
       <div class="publication-body">
         <h3>{% if link.pdf %}<a href="{{ link.pdf }}" target="_blank" rel="noopener">{{ link.title }}</a>{% else %}{{ link.title }}{% endif %}</h3>
-        <p class="publication-authors">{{ link.authors }}</p>
-        <p class="publication-venue">{{ link.conference }}</p>
+        <p class="publication-authors">{% include rich-text.html text=link.authors %}</p>
+        <p class="publication-venue">{% include rich-text.html text=link.conference %}</p>
         <div class="publication-actions">
           {% if link.pdf %}
           <a href="{{ link.pdf }}" class="timeline-link" target="_blank" rel="noopener">PDF</a>
@@ -40,10 +40,10 @@
           {% endif %}
         </div>
         {% if link.notes %}
-        <p class="publication-note">{{ link.notes }}</p>
+        <p class="publication-note">{% include rich-text.html text=link.notes %}</p>
         {% endif %}
         {% if link.others %}
-        <p class="publication-extra">{{ link.others }}</p>
+        <p class="publication-extra">{% include rich-text.html text=link.others %}</p>
         {% endif %}
       </div>
     </article>

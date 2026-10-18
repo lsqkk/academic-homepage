@@ -25,14 +25,14 @@
           {% endif %}
         </div>
 
-        <h3>{{ link.title }}</h3>
-        <p>{{ link.description }}</p>
+        <h3>{% include rich-text.html text=link.title %}</h3>
+        <p>{% include rich-text.html text=link.description %}</p>
 
         {% if link.tech_stack %}
-        <p class="project-detail"><span class="detail-label">Tech Stack</span>{{ link.tech_stack }}</p>
+        <p class="project-detail"><span class="detail-label">Tech Stack</span>{% include rich-text.html text=link.tech_stack %}</p>
         {% endif %}
         {% if link.outcome %}
-        <p class="project-detail"><span class="detail-label">Outcome</span>{{ link.outcome }}</p>
+        <p class="project-detail"><span class="detail-label">Outcome</span>{% include rich-text.html text=link.outcome %}</p>
         {% endif %}
 
         {% if link.link %}

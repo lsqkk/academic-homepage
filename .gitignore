@@ -5,3 +5,18 @@ Gemfile.lock
 .DS_Store
 .jekyll-cache
 git-update.sh
+
+# Resume build artifacts
+resume/main.tex
+resume/main.pdf
+resume/main.aux
+resume/main.log
+resume/main.out
+resume/main.fls
+resume/main.fdb_latexmk
+resume/main.synctex.gz
+resume/.output/
+resume/.cache/
+resume/.venv/
+__pycache__/
+*.pyc

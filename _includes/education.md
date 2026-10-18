@@ -14,24 +14,24 @@
       {% endif %}
       <div class="education-card-top">
         <div>
-          <h3>{{ item.school }}</h3>
-          <p class="education-degree">{{ item.program }}</p>
+          <h3>{% include rich-text.html text=item.school %}</h3>
+          <p class="education-degree">{% include rich-text.html text=item.program %}</p>
         </div>
         <span class="education-period">{{ item.period }}</span>
       </div>
 
       {% if item.focus %}
-      <p class="education-focus">{{ item.focus }}</p>
+      <p class="education-focus">{% include rich-text.html text=item.focus %}</p>
       {% endif %}
 
       {% if item.summary %}
-      <p class="education-summary">{{ item.summary }}</p>
+      <p class="education-summary">{% include rich-text.html text=item.summary %}</p>
       {% endif %}
 
       {% if item.highlights %}
       <div class="education-tags">
         {% for tag in item.highlights %}
-        <span>{{ tag }}</span>
+        <span>{% include rich-text.html text=tag %}</span>
         {% endfor %}
       </div>
       {% endif %}

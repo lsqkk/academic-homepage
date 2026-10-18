@@ -22,12 +22,20 @@
 
       <div class="award-body">
         <time class="award-date" datetime="{{ link.date | date: '%Y-%m-%d' }}">{{ link.date | date: "%b. %Y" }}</time>
-        <h3>{{ link.title }}</h3>
+        <h3>
+          {%- if link.link and link.title contains '](' -%}
+            {% include rich-text.html text=link.title %}
+          {%- elsif link.link -%}
+            <a href="{{ link.link }}" target="_blank" rel="noopener">{% include rich-text.html text=link.title %}</a>
+          {%- else -%}
+            {% include rich-text.html text=link.title %}
+          {%- endif -%}
+        </h3>
         {% if link.award_description %}
-        <p class="award-highlight">{{ link.award_description }}</p>
+        <p class="award-highlight">{% include rich-text.html text=link.award_description %}</p>
         {% endif %}
         {% if link.reason %}
-        <p>{{ link.reason }}</p>
+        <p>{% include rich-text.html text=link.reason %}</p>
         {% endif %}
       </div>
     </article>

@@ -1,0 +1,11 @@
+{%- comment -%}
+  Render a YAML text field with inline Markdown links.
+
+  Usage: {% include rich-text.html text=item.description %}
+
+  Supports [label](https://example.com) and inline HTML such as <strong>.
+  markdownify wraps its output in <p>; the tags are stripped so the result can
+  live inside an existing <p>, <h3>, <li>, or <span>.
+{%- endcomment -%}
+{%- capture rich_text_output -%}{{ include.text | markdownify }}{%- endcapture -%}
+{{ rich_text_output | remove: '<p>' | remove: '</p>' }}

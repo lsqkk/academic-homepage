@@ -1,0 +1,74 @@
+name: Build resume
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "_config.yml"
+      - "_data/**"
+      - "resume/**"
+      - "assets/img/avatar.*"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-resume
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install generator dependencies
+        run: pip install -r resume/requirements.txt
+
+      - name: Run generator tests
+        run: python -m unittest discover -s resume/scripts -p "test_*.py"
+
+      - name: Generate LaTeX from YAML
+        run: python resume/scripts/build_resume_data.py
+
+      - name: Compile PDF with XeLaTeX
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: main.tex
+          working_directory: resume
+          latexmk_use_xelatex: true
+          args: -interaction=nonstopmode -halt-on-error -file-line-error
+
+      - name: Publish PDF into the site assets
+        run: |
+          mkdir -p assets/files
+          cp resume/main.pdf assets/files/Zhu_Enze_s_Resume_en_.pdf
+
+      - name: Commit the regenerated PDF
+        run: |
+          if git diff --quiet -- assets/files/Zhu_Enze_s_Resume_en_.pdf; then
+            echo "Resume PDF is unchanged."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add assets/files/Zhu_Enze_s_Resume_en_.pdf
+          git commit -m "chore: regenerate resume PDF"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep 3
+          done
+          echo "Failed to push the regenerated resume after 3 attempts." >&2
+          exit 1

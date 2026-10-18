@@ -5,13 +5,13 @@
   </div>
 
   <div class="about-panel">
-    <p class="about-lead">{{ site.data.profile.about.lead }}</p>
-    <p class="about-summary">{{ site.data.profile.about.summary }}</p>
+    <p class="about-lead">{% include rich-text.html text=site.data.profile.about.lead %}</p>
+    <p class="about-summary">{% include rich-text.html text=site.data.profile.about.summary %}</p>
 
     {% if site.data.profile.about.focus_areas %}
     <div class="education-tags about-tags">
       {% for item in site.data.profile.about.focus_areas %}
-      <span>{{ item }}</span>
+      <span>{% include rich-text.html text=item %}</span>
       {% endfor %}
     </div>
     {% endif %}

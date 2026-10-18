@@ -11,7 +11,7 @@
       <h3>{{ group.title }}</h3>
       <ul class="skill-list">
         {% for item in group.items %}
-        <li>{{ item }}</li>
+        <li>{% include rich-text.html text=item %}</li>
         {% endfor %}
       </ul>
     </article>

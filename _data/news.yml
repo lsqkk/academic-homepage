@@ -1,7 +1,7 @@
 main:
   - date: 2026-10-12
     title: CoS-VRL Research Collaboration Started
-    description: Began CoS-VRL with Chengqi Shi, applying step-level verifiable reinforcement learning to make video diffusion reasoning more accurate and cheaper to train.
+    description: Began CoS-VRL with [Chengqi Shi](https://1scq.github.io/), applying step-level verifiable reinforcement learning to make video diffusion reasoning more accurate and cheaper to train.
 
   - date: 2026-10-08
     title: 2025-2026 University Scholarship Awarded
@@ -9,7 +9,7 @@ main:
 
   - date: 2026-10-02
     title: AI-Assisted Surgery Project Begins
-    description: Joined Prof. Jiayi Wu's project at the Institute of Artificial Intelligence and Robotics on AI-assisted laparoscopic surgery.
+    description: Joined Prof. Jiayi Wu's project at the [Institute of Artificial Intelligence and Robotics](https://iair.xjtu.edu.cn/) on AI-assisted laparoscopic surgery.
 
   - date: 2026-09-20
     title: Joined XJTU RoboCup Vision Group
@@ -17,7 +17,7 @@ main:
 
   - date: 2026-09-10
     title: 'Released "Chuang" (窗) Desktop Application'
-    description: Published Chuang, an open-source Linux desktop app that renders the real sky, weather, and windowsill shadows in real time.
+    description: Published [Chuang](https://github.com/lsqkk/Chuang), an open-source Linux desktop app that renders the real sky, weather, and windowsill shadows in real time.
 
   - date: 2026-08-15
     title: Silver Award at the 2026 Innovation Competition
@@ -57,7 +57,7 @@ main:
 
   - date: 2025-02-01
     title: Personal Blog Launched
-    description: My personal technical blog "Quark Blog" (lsqkk.github.io) went live.
+    description: My personal technical blog ["Quark Blog"](https://lsqkk.github.io/) went live.
 
   - date: 2025-01-01
     title: Quark Autonomy Control Copyright Obtained

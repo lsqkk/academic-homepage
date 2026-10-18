@@ -1,6 +1,12 @@
 about:
-  lead: I am Zhu Enze (朱恩泽), a second-year undergraduate student in the School of Automation at Xi'an Jiaotong University (西安交通大学) and a member of the 2023 class of the Young Gifted Program (YGP, 少年班).
+  lead: I am Zhu Enze (朱恩泽), a second-year undergraduate student in the [School of Automation](https://automation.xjtu.edu.cn) at [Xi'an Jiaotong University](https://www.xjtu.edu.cn) (西安交通大学) and a member of the 2023 class of the [Young Gifted Program](https://bjb.xjtu.edu.cn/info/1071/1237.htm) (YGP, 少年班).
   summary: My work sits at the intersection of computer vision, intelligent systems, and software engineering, with a focus on turning research ideas into working systems. My interests span machine learning, video understanding, embedded systems, and full-stack application development.
+  resume_summary: I am Zhu Enze, a 2025 undergraduate in Automation at Xi'an Jiaotong University and a member of the 2023 Young Gifted Program, interested in intelligent systems, machine learning, software engineering, and embedded development.
+  resume_focus:
+    - Intelligent systems
+    - Machine learning
+    - Software engineering
+    - Embedded development
   focus_areas:
     - Computer vision
     - Machine learning & Deep learning
@@ -12,22 +18,22 @@ about:
 skills:
   - title: Programming Languages
     items:
-      - Python (data processing and machine learning)
-      - C / C++ (fundamental development)
-      - JS&TS / HTML / CSS / Astro (front-end development)
-      - Bash (Linux operations)
+      - "[Python](https://www.python.org/) (data processing and machine learning)"
+      - "[C / C++](https://isocpp.org/) (fundamental development)"
+      - "JS&TS / HTML / CSS / [Astro](https://astro.build/) (front-end development)"
+      - "[Bash](https://www.gnu.org/software/bash/) (Linux operations)"
 
   - title: Frameworks & Tools
     items:
-      - TensorFlow / PyTorch / PaddlePaddle
-      - GTK4 and libadwaita (Linux desktop)
-      - Linux, SSH, Git, Firebase, LaTeX
-      - Jekyll and static-site workflows
+      - "[TensorFlow](https://www.tensorflow.org/) / [PyTorch](https://pytorch.org/) / [PaddlePaddle](https://www.paddlepaddle.org.cn/)"
+      - "[GTK4](https://www.gtk.org/) and [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/) (Linux desktop)"
+      - "Linux, SSH, [Git](https://git-scm.com/), [Firebase](https://firebase.google.com/), [LaTeX](https://www.latex-project.org/)"
+      - "[Jekyll](https://jekyllrb.com/) and static-site workflows"
 
   - title: Hardware & Platforms
     items:
-      - Arduino development fundamentals
-      - Orange Pi deployment and maintenance
+      - "[Arduino](https://www.arduino.cc/) development fundamentals"
+      - "[Orange Pi](http://www.orangepi.org/) deployment and maintenance"
       - Practical Linux server operation
 
   - title: Languages

@@ -15,9 +15,9 @@
         <span class="news-dot"></span>
       </div>
       <div class="news-body">
-        <h3>{{ item.title }}</h3>
+        <h3>{% include rich-text.html text=item.title %}</h3>
         {% if item.description %}
-        <p>{{ item.description }}</p>
+        <p>{% include rich-text.html text=item.description %}</p>
         {% endif %}
       </div>
     </article>

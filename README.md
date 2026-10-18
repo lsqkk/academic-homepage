@@ -25,7 +25,7 @@
 
 ### UI 与交互
 
-- 项目经历采用倒序时间轴布局，默认展示最近 5 条，支持展开/收起
+- 项目经历采用倒序时间轴布局，默认展示最近 8 条，支持展开/收起
 - 新闻使用独立风格时间轴，与项目区块保持统一但不完全重复
 - 教育经历使用卡片式展示，并支持整卡点击跳转
 - 竞赛与获奖区统一图片宽度，文本对齐更稳定
@@ -34,6 +34,20 @@
 - 所有图片支持点击放大弹窗，支持淡入缩放、点击空白关闭、右上角关闭、`Esc` 关闭
 - 左侧个人信息栏在桌面端固定显示，浏览长页面时不会跟随滚动离开视野
 - 顶部个人信息区包含循环打字机动画
+
+## 简历自动生成
+
+简历不再需要在另一个仓库维护副本。LaTeX 模板、字体和生成脚本位于 [`resume/`](resume/README.md)，
+内容直接读取本仓库的 `_config.yml` 与 `_data/*.yml`：
+
+- 修改 `_data/project.yml` 等配置并 push 后，GitHub Actions 会自动重建
+  `assets/files/Zhu_Enze_s_Resume_en_.pdf` 并提交回仓库；
+- 本地构建：`python resume/scripts/build_resume.py`；
+- 项目通过 `resume_rank` 标记进入简历的优先级，数字越小越靠前；
+- 所有描述字段都支持 Markdown 行内链接，例如
+  `[PaddlePaddle](https://www.paddlepaddle.org.cn/)`，主页与简历会同时渲染。
+
+完整字段说明见 [`resume/README.md`](resume/README.md)。
 
 ## 快速部署及使用此模板，请前往 👉 [GlassScholar](https://github.com/lsqkk/GlassScholar)
 

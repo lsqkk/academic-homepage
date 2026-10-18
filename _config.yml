@@ -6,12 +6,45 @@ email: jsxzznz@163.com
 
 keywords: xjtu automation
 description: Zhu Enze is a second-year undergraduate student in Automation at Xi'an Jiaotong University and a 2023 student in the YGP.
-canonical: https://lsqkk.github.io/academic-homepage
+canonical: https://aca.130923.xyz
 
 google_scholar: https://scholar.google.com.hk/citations?hl=zh-CN&pli=1&user=t_HxDtcAAAAJ  # Google学术主页链接
 cv_link: assets/files/Zhu_Enze_s_Resume_en_.pdf  # 简历PDF文件路径
 github_link: https://github.com/lsqkk/  # GitHub主页链接
-homepage_link: https://lsqkk.github.io  # 个人主页链接
+homepage_link: https://lsqkk.github.io  # 个人博客链接（主页侧栏 house 图标）
+
+# 简历生成配置：resume/ 目录读取此块生成 PDF，主页本身不读取
+# 简历内容的唯一来源是 _config.yml + _data/*.yml，请勿在 resume/ 里手动改数据
+resume:
+  name: Zhu Enze
+  title: Undergraduate Student
+  tagline: Intelligent Systems, Software Engineering, and Embedded Development
+  location: Xi'an, China
+  phone: "+86 13092344080"
+  avatar: ./assets/img/avatar.jpg
+  contact_links:
+    - label: Homepage
+      url: https://aca.130923.xyz
+    - label: GitHub
+      url: https://github.com/lsqkk/
+    - label: Google Scholar
+      url: https://scholar.google.com.hk/citations?hl=zh-CN&pli=1&user=t_HxDtcAAAAJ
+    - label: CV PDF
+      url: https://aca.130923.xyz/assets/files/Zhu_Enze_s_Resume_en_.pdf
+  theme:
+    accent_color: "245C73"
+    accent_soft_color: "EDF5F4"
+  section_visibility:
+    about: true
+    education: true
+    projects: true
+    awards: true
+    publications: false
+    skills: true
+  list_preview_count:
+    projects: 5
+    awards: 3
+    publications: 2
 
 section_visibility:
   about: true
@@ -69,3 +102,5 @@ exclude:
   - LICENSE
   - minimal-light.gemspec
   - html_source_file/
+  - resume/
+  - CLAUDE.md

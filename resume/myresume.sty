@@ -1,0 +1,185 @@
+\NeedsTeXFormat{LaTeX2e}
+
+\usepackage[a4paper,top=0.9cm,bottom=1.05cm,left=1.65cm,right=1.65cm]{geometry}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage{fontspec}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{ragged2e}
+\usepackage{setspace}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage{xurl}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlength{\emergencystretch}{1.5em}
+\pagestyle{empty}
+\urlstyle{same}
+
+\setmainfont{SabonLTStd}[
+  Path=./Fonts/Sabon/,
+  Extension=.ttf,
+  UprightFont=*-Regular,
+  BoldFont=*-Bold,
+  ItalicFont=*-Italic,
+  BoldItalicFont=*-BoldItalic,
+  Ligatures=TeX
+]
+\newfontfamily\Calluna{Calluna}[
+  Path=./Fonts/Calluna/,
+  Extension=.otf,
+  UprightFont=*-Regular
+]
+\newfontfamily\CronosLt{CronosProLT}[
+  Path=./Fonts/Cronos/,
+  Extension=.ttf,
+  UprightFont=*-Regular
+]
+\newfontfamily\CourierResume{CourierNew}[
+  Path=./Fonts/Courier/,
+  Extension=.ttf,
+  UprightFont=*-Regular
+]
+
+\definecolor{ResumeAccent}{HTML}{245C73}
+\definecolor{ResumeAccentSoft}{HTML}{EDF5F4}
+\definecolor{ResumeTextMuted}{HTML}{5B6470}
+\definecolor{ResumeRule}{HTML}{D9E1E6}
+\definecolor{ResumeHeading}{HTML}{16202A}
+\definecolor{ResumePanel}{HTML}{F7FAFB}
+
+\hypersetup{
+  colorlinks=true,
+  urlcolor=ResumeAccent,
+  linkcolor=ResumeAccent,
+  pdfborder={0 0 0}
+}
+
+\newcommand{\resumeSetAccent}[2]{%
+  \definecolor{ResumeAccent}{HTML}{#1}%
+  \definecolor{ResumeAccentSoft}{HTML}{#2}%
+  \hypersetup{
+    colorlinks=true,
+    urlcolor=ResumeAccent,
+    linkcolor=ResumeAccent,
+    pdfborder={0 0 0}
+  }%
+}
+
+\newcommand{\resumeDivider}{%
+  \par\noindent\color{ResumeRule}\rule{\textwidth}{0.7pt}\color{black}\par
+}
+
+\newcommand{\resumeSectionTitle}[1]{%
+  \noindent
+  \textcolor{ResumeAccent}{\rule[-0.18em]{2.2pt}{1.22em}}%
+  \hspace{0.52em}%
+  {\CronosLt\fontsize{12.3pt}{14pt}\selectfont\scshape\textcolor{ResumeHeading}{#1}}\par
+}
+
+\newcommand{\resumeSectionBlock}[2]{%
+  \vspace{0.62em}%
+  \noindent
+  \begin{minipage}[t]{0.18\textwidth}
+    \vspace{0pt}\raggedright #1
+  \end{minipage}
+  \hfill
+  \begin{minipage}[t]{0.78\textwidth}
+    \vspace{0pt}\raggedright #2
+  \end{minipage}\par
+}
+
+\newcommand{\resumeAvatarImage}[1]{%
+  \begin{tikzpicture}
+    \clip (0,0) circle (1.45cm);
+    \node at (0,0) {\includegraphics[width=3.1cm,height=3.1cm]{#1}};
+    \draw[ResumeAccent,line width=1.2pt] (0,0) circle (1.45cm);
+  \end{tikzpicture}
+}
+
+\newcommand{\resumeAvatarPlaceholder}[1]{%
+  \begin{tikzpicture}
+    \fill[ResumeAccentSoft] (0,0) circle (1.45cm);
+    \draw[ResumeAccent,line width=1.2pt] (0,0) circle (1.45cm);
+    \node[text=ResumeAccent,font=\Calluna\fontsize{17pt}{17pt}\selectfont] at (0,0) {#1};
+  \end{tikzpicture}
+}
+
+\newcommand{\resumeAvatarAuto}[2]{%
+  \IfFileExists{#1}{\resumeAvatarImage{#1}}{\resumeAvatarPlaceholder{#2}}%
+}
+
+\newcommand{\resumeLinkText}[2]{\href{#1}{#2}}
+
+\newcommand{\resumeHeader}[6]{%
+  \noindent
+  \begin{minipage}[c]{0.17\textwidth}
+    \centering #1
+  \end{minipage}
+  \hfill
+  \begin{minipage}[c]{0.79\textwidth}
+    {\Calluna\fontsize{26pt}{26pt}\selectfont\textcolor{ResumeHeading}{#2}}\par
+    \vspace{0.2em}
+    {\CronosLt\fontsize{12.1pt}{12.1pt}\selectfont\textcolor{ResumeAccent}{#3}}\par
+    \vspace{0.38em}
+    {\small\setstretch{1.16}\color{ResumeTextMuted}#4}\par
+    \vspace{0.34em}
+    {\small\setstretch{1.14}#5}\par
+    \vspace{0.26em}
+    {\small\setstretch{1.14}#6}
+  \end{minipage}\par
+  \vspace{0.55em}
+  \resumeDivider
+}
+
+\newcommand{\resumeSummary}[1]{%
+  {\small\setstretch{1.16}\RaggedRight #1\par}
+}
+
+\newcommand{\resumeEntry}[4]{%
+  \begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{3.4cm}@{}}
+    {\textbf{#1}\ifx&#2&\else\par\vspace{0.04em}{\small\itshape\textcolor{ResumeTextMuted}{#2}}\fi}%
+    & {\small\textcolor{ResumeTextMuted}{#3}} \\
+  \end{tabularx}
+  \ifx&#4&\else
+    \vspace{0.12em}
+    {\small\setstretch{1.16}\color{ResumeTextMuted}#4\par}
+  \fi
+}
+
+\newcommand{\resumeMetaLine}[1]{%
+  \vspace{0.22em}
+  {\small\setstretch{1.16}\RaggedRight\textcolor{ResumeTextMuted}{#1}\par}
+}
+
+\newcommand{\resumeFocusLine}[1]{%
+  \vspace{0.3em}
+  {\small\setstretch{1.16}\RaggedRight\textcolor{ResumeAccent}{#1}\par}
+}
+
+\newcommand{\resumeBulletsStart}{%
+  \begin{itemize}[leftmargin=1.1em,itemsep=0.08em,topsep=0.2em,parsep=0pt,partopsep=0pt,
+    label={\textcolor{ResumeAccent}{\raisebox{0.18ex}{\scriptsize\textbullet}}}]%
+}
+\newcommand{\resumeBulletsEnd}{\end{itemize}}
+\newcommand{\resumeBullet}[1]{\item \small #1}
+
+\newcommand{\resumeAwardItem}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X>{\raggedleft\arraybackslash}p{1.85cm}@{}}
+    #1 & {\small\textcolor{ResumeTextMuted}{#2}} \\
+  \end{tabularx}
+  \ifx&#3&\else
+    \vspace{0.06em}
+    {\small\setstretch{1.12}\textcolor{ResumeTextMuted}{#3}\par}
+  \fi
+}
+
+\newcommand{\resumeCompactListStart}{%
+  \begin{itemize}[leftmargin=0pt,label={},itemsep=0.22em,topsep=0.14em,parsep=0pt,partopsep=0pt]%
+}
+\newcommand{\resumeCompactListEnd}{\end{itemize}}
+\newcommand{\resumeCompactItem}[1]{\item \small #1}
