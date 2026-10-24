@@ -2,7 +2,6 @@
   <div class="section-heading">
     <span class="section-kicker">Research Output</span>
     <h2>Publications</h2>
-    <p>Preprints, conference papers, and related materials can be presented here in a cleaner card layout.</p>
   </div>
 
   {% assign publications = site.data.publications.main %}
@@ -51,7 +50,7 @@
   </div>
   {% else %}
   <div class="empty-state-card">
-    <p>Publications can be added later without changing page structure. This section is ready when you are.</p>
+    <p>No publications yet.</p>
   </div>
   {% endif %}
 </section>

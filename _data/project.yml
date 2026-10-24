@@ -1,6 +1,23 @@
+categories:
+  - key: research
+    label: Research
+  - key: personal
+    label: Personal Projects
+  - key: coursework
+    label: Team & Coursework
+
 main:
+  - title: Software Prefetching for High-Performance Computing
+    date: 2026-10-24
+    category: research
+    attribute: Research Project
+    description: Preliminary research in Prof. Gelin Fu's group at the [Institute of Artificial Intelligence and Robotics (IAIR)](https://iair.xjtu.edu.cn/), focused on high-performance computing. Currently responsible for software prefetching at the CPU architecture level, with groundwork research now underway.
+    tech_stack: High-performance computing, CPU architecture, Software prefetching
+    outcome: Preliminary research in progress.
+
   - title: 'CoS-VRL: Chain-of-Steps Verifiable Reinforcement Learning for Video Diffusion Reasoning'
     date: 2026-10-12
+    category: research
     attribute: Research Collaboration
     description: A research collaboration with [Chengqi Shi](https://1scq.github.io/), a 2023 YGP classmate, computer science undergraduate, and embodied intelligence researcher. CoS-VRL estimates how much each denoising step contributes to the final reasoning outcome using verifiable rewards, and reinforces only the genuinely critical denoising stages. This makes reasoning with video diffusion models more accurate while reducing training cost.
     tech_stack: Video diffusion models, Reinforcement learning, Verifiable rewards, [PyTorch](https://pytorch.org/)
@@ -14,6 +31,7 @@ main:
 
   - title: AI-Assisted Laparoscopic Surgery System
     date: 2026-10-02
+    category: research
     attribute: Research Project
     description: An early-stage project at the [Institute of Artificial Intelligence and Robotics (IAIR)](https://iair.xjtu.edu.cn/) led by Prof. Jiayi Wu, building an AI-assisted surgical system based on laparoscopic video. Currently contributing to the research groundwork as the project begins.
     tech_stack: Computer vision, Surgical video analysis, Deep learning
@@ -26,6 +44,7 @@ main:
 
   - title: 'Chuang (窗): An Open-Source Linux Desktop Sky Window'
     date: 2026-09-10
+    category: personal
     attribute: Open Source Project
     description: A Linux desktop application that presents a live, physically grounded view of the sky outside, including the sun, moon phase, about 1,600 stars, real weather, and shadows cast on a windowsill. Astronomy and shadow calculations run fully offline, weather is mirrored from [Open-Meteo](https://open-meteo.com/) when available, and the scene responds to rain, snow, fog, and cloud cover. The app also supports wallpaper mode, a compact always-on-top mode, system-tray integration, and a four-language interface.
     tech_stack: "[Python](https://www.python.org/), [GTK4](https://www.gtk.org/), [libadwaita](https://gnome.pages.gitlab.gnome.org/libadwaita/), Cairo, [Open-Meteo](https://open-meteo.com/)"
@@ -41,6 +60,7 @@ main:
 
   - title: RACDataset Fitness Video Understanding
     date: 2026-04-10
+    category: research
     attribute: Research Project
     description: A computer vision project on the RACDataset fitness and exercise videos, supervised by Prof. Wang Hang at Xi'an Jiaotong University. Responsible for downloading and processing more than 20,000 videos spanning 63 action categories, and for designing a video segmentation algorithm. Continuing to contribute to follow-up work.
     tech_stack: Python, Computer vision, Video processing, Data pipeline
@@ -55,6 +75,7 @@ main:
 
   - title: Serverless SVG Card Generator with Bilibili API Integration and Vercel Deployment
     date: 2026-01-24
+    category: personal
     attribute: Open Source Project
     description: A serverless-friendly SVG card generator for Bilibili user profiles. Implements a clean API that fetches user stats via Bilibili web endpoints, transforms data with sanitization and formatting, then renders responsive vector cards using template-based SVG composition. Features a decoupled theme-color system, automated text wrapping for bios/titles, parallel async fetching with built-in caching, and HTML escaping for XSS prevention. Deployed on [Vercel](https://vercel.com/) as serverless functions with a fallback Python script for local testing.
     tech_stack: JavaScript, Python, HTML/CSS, SVG templates, [Vercel](https://vercel.com/)
@@ -63,6 +84,7 @@ main:
 
   - title: Personal Server Deployment and Operation
     date: 2025-12-20
+    category: personal
     attribute: Open Source Project
     description: Deployed and maintained a home server cluster on [Orange Pi](http://www.orangepi.org/), stably running various services including [Ollama](https://ollama.com/) (local large language model service), [Nextcloud](https://nextcloud.com/) (private cloud storage), [WordPress](https://wordpress.org/) (website management), etc. Gained practical experience in Linux system administration, containerized application deployment, and intranet penetration techniques.
     tech_stack: Linux, [Docker](https://www.docker.com/), [Orange Pi](http://www.orangepi.org/)
@@ -71,6 +93,7 @@ main:
 
   - title: AI-Based Forest Fire Prediction Model
     date: 2025-12-01
+    category: coursework
     attribute: AIC Competition Project
     description: Responsible for the multimodal data preprocessing pipeline, specifically handling the download, cleaning, and spatial interpolation of [ERA5 reanalysis meteorological data](https://cds.climate.copernicus.eu/datasets/reanalysis-era5-single-levels) to provide structured input for subsequent CNN and large language model training, and made innovations based on the YingLong Model.
     tech_stack: Python, [PaddlePaddle](https://www.paddlepaddle.org.cn/)
@@ -86,6 +109,7 @@ main:
 
   - title: farmXpert (iPheno) Agricultural Vision App
     date: 2025-10-20
+    category: research
     attribute: Research Observership
     description: A research observership with undergraduate advisor Prof. Sun Hequan on farmXpert (iPheno), an interdisciplinary project spanning automatic control, computer vision, and agriculture that applies vision models to crop disease and pest problems. Participated as an observer and learner, studied the project's research pipeline, and proposed an app design concept. Did not take part in the algorithm or model development.
     tech_stack: Computer vision, Agricultural AI, Mobile application design
@@ -93,6 +117,7 @@ main:
 
   - title: Serverless P2P File Transfer System
     date: 2025-10-01
+    category: personal
     attribute: Personal Blog Service
     description: To overcome the limitation of lacking a dedicated signaling server, I established a signaling channel using [Firebase Realtime Database](https://firebase.google.com/products/realtime-database). Combined with [WebRTC](https://webrtc.org/) technology and public STUN servers, this system enabled direct peer-to-peer file transfer between browsers.
     tech_stack: JavaScript ([WebRTC API](https://webrtc.org/)), [Firebase](https://firebase.google.com/)
@@ -101,6 +126,7 @@ main:
 
   - title: Cross-Platform PPT Remote Control Tool
     date: 2025-09-01
+    category: personal
     attribute: Open Source Project
     description: Designed and implemented a lightweight remote control solution based on web and local bridge programs. Utilized [Firebase](https://firebase.google.com/) for real-time signaling synchronization and employed a local [Node.js](https://nodejs.org/) script to parse commands and simulate keyboard events, enabling seamless control of PC-side PPT presentations from a mobile device.
     tech_stack: JavaScript, [Node.js](https://nodejs.org/), [Firebase Realtime Database](https://firebase.google.com/products/realtime-database)
@@ -109,6 +135,8 @@ main:
 
   - title: Personal Independent Blog Development
     date: 2025-02-01
+    category: personal
+    attribute: Personal Project
     description: Designed, developed from scratch, and continuously maintain a static blog system for sharing technical notes and project summaries. The system achieves zero server backend deployment, with all code open-sourced. The site has obtained a software copyright.
     tech_stack: JavaScript, HTML/CSS, [Jekyll](https://jekyllrb.com/)
     link: https://lsqkk.github.io/
@@ -116,6 +144,7 @@ main:
 
   - title: U-Transformer Architecture for Meteorological Prediction
     date: 2024-06-02
+    category: coursework
     attribute: YGP Preparatory AI Course Project
     description: Contributed to partial code development for a weather forecasting model based on a U-Transformer structure. The design integrates strengths from both Pangu and Fuxi large weather models, implemented using the domestic [PaddlePaddle](https://www.paddlepaddle.org.cn/) deep learning framework to support efficient spatial-temporal prediction.
     tech_stack: Python, [PaddlePaddle](https://www.paddlepaddle.org.cn/), NumPy
@@ -125,6 +154,7 @@ main:
 
   - title: CNN-based Animal Recognition System
     date: 2024-06-01
+    category: coursework
     attribute: YGP Preparatory AI Course Project
     description: Responsible for dataset downloading, preprocessing, and final reporting. The innovation lies in training the CNN from scratch without freezing earlier layers, along with introducing improvements in pooling strategies and cosine annealing scheduling to enhance convergence and accuracy.
     tech_stack: Python, [PyTorch](https://pytorch.org/), [OpenCV](https://opencv.org/)

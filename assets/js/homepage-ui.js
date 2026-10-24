@@ -1,9 +1,66 @@
+// Enables the tabbed layout only when this script actually loads, so the
+// server-rendered panels stay visible if the file fails to fetch.
+document.documentElement.classList.add("tabs-ready");
+
 document.addEventListener("DOMContentLoaded", function () {
   var toggles = document.querySelectorAll("[data-toggle-target]");
+  var tabGroups = document.querySelectorAll("[data-tab-group]");
   var lightbox = document.getElementById("image-lightbox");
   var lightboxImage = document.getElementById("image-lightbox-img");
   var lightboxClose = document.getElementById("image-lightbox-close");
-  var repoBoard = document.querySelector(".repo-board");
+
+  tabGroups.forEach(function (group) {
+    var tabs = Array.prototype.slice.call(group.querySelectorAll('[role="tab"]'));
+
+    if (!tabs.length) {
+      return;
+    }
+
+    function activateTab(tab) {
+      tabs.forEach(function (candidate) {
+        var isActive = candidate === tab;
+        var panel = document.getElementById(candidate.getAttribute("aria-controls"));
+
+        candidate.classList.toggle("is-active", isActive);
+        candidate.setAttribute("aria-selected", isActive ? "true" : "false");
+        candidate.tabIndex = isActive ? 0 : -1;
+
+        if (panel) {
+          panel.classList.toggle("is-active", isActive);
+        }
+      });
+    }
+
+    tabs.forEach(function (tab, index) {
+      tab.addEventListener("click", function () {
+        activateTab(tab);
+      });
+
+      tab.addEventListener("keydown", function (event) {
+        var nextIndex = null;
+
+        if (event.key === "ArrowRight") {
+          nextIndex = (index + 1) % tabs.length;
+        } else if (event.key === "ArrowLeft") {
+          nextIndex = (index - 1 + tabs.length) % tabs.length;
+        } else if (event.key === "Home") {
+          nextIndex = 0;
+        } else if (event.key === "End") {
+          nextIndex = tabs.length - 1;
+        }
+
+        if (nextIndex === null) {
+          return;
+        }
+
+        event.preventDefault();
+        tabs[nextIndex].focus();
+        activateTab(tabs[nextIndex]);
+      });
+    });
+
+    activateTab(tabs[0]);
+  });
 
   toggles.forEach(function (toggle) {
     toggle.addEventListener("click", function () {
@@ -92,66 +149,5 @@ document.addEventListener("DOMContentLoaded", function () {
         closeLightbox();
       }
     });
-  }
-
-  if (repoBoard) {
-    var owner = repoBoard.getAttribute("data-repo-owner");
-    var name = repoBoard.getAttribute("data-repo-name");
-    var repoUrl = repoBoard.getAttribute("data-repo-url");
-    var apiUrl = "https://api.github.com/repos/" + owner + "/" + name;
-
-    function setText(id, value) {
-      var element = document.getElementById(id);
-      if (element) {
-        element.textContent = value;
-      }
-    }
-
-    function formatDate(value) {
-      var date = new Date(value);
-      return date.toLocaleDateString(undefined, {
-        year: "numeric",
-        month: "short",
-        day: "numeric"
-      });
-    }
-
-    fetch(apiUrl, {
-      headers: {
-        Accept: "application/vnd.github+json"
-      }
-    })
-      .then(function (response) {
-        if (!response.ok) {
-          throw new Error("GitHub API request failed");
-        }
-
-        return response.json();
-      })
-      .then(function (data) {
-        setText("repo-board-title", data.full_name || owner + "/" + name);
-        setText("repo-board-description", data.description || "A deeply customized academic homepage template.");
-        setText("repo-stars", String(data.stargazers_count ?? "--"));
-        setText("repo-forks", String(data.forks_count ?? "--"));
-        setText("repo-issues", String(data.open_issues_count ?? "--"));
-        setText("repo-watchers", String(data.subscribers_count ?? data.watchers_count ?? "--"));
-        setText("repo-branch", data.default_branch || "--");
-        setText("repo-updated", data.pushed_at ? formatDate(data.pushed_at) : "--");
-        setText("repo-license", "License: " + (data.license && data.license.spdx_id ? data.license.spdx_id : "Not specified"));
-
-        var boardLink = document.getElementById("repo-board-link");
-        var issuesLink = document.getElementById("repo-issues-link");
-
-        if (boardLink) {
-          boardLink.href = data.html_url || repoUrl;
-        }
-
-        if (issuesLink) {
-          issuesLink.href = (data.html_url || repoUrl) + "/issues";
-        }
-      })
-      .catch(function () {
-        setText("repo-board-description", "GitHub API data is temporarily unavailable. You can still open the repository directly.");
-      });
   }
 });

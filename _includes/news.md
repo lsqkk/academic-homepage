@@ -2,7 +2,6 @@
   <div class="section-heading">
     <span class="section-kicker">Updates</span>
     <h2>News</h2>
-    <p>A compact stream of recent academic, project, and competition updates.</p>
   </div>
 
   {% assign sorted_news = site.data.news.main | sort: "date" | reverse %}

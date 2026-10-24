@@ -42,6 +42,10 @@ Windows 上若 `python` 是 Store 占位符，使用 `python3.11` 或实际解�
 ## 关键约定
 
 - **内容只改 `_data/*.yml` 与 `_config.yml`**，不要在两个仓库间复制数据。
+- **项目/奖项分类**：`_data/project.yml` 与 `_data/awards.yml` 顶部的 `categories`
+  定义标签页顺序与文案，条目用 `category: <key>` 归属。新增条目必须写 `category`，
+  否则不会出现在任何标签页中。主页按分类渲染为标签页（`_includes/project.md`、
+  `_includes/awards.md` + `assets/js/homepage-ui.js` 的 `data-tab-group`）。
 - **描述类字段支持 Markdown 行内链接**（`[label](https://...)`）。主页通过
   `_includes/rich-text.html` 的 `markdownify` 渲染；简历生成器在
   `resume/scripts/build_resume_data.py` 中把链接转成 `\href`。新增字段时沿用
@@ -49,7 +53,8 @@ Windows 上若 `python` 是 Store 占位符，使用 `python3.11` 或实际解�
 - **简历项目选择**：`project.main[].resume_rank` 数字越小越靠前；只要有任意项目写了
   `resume_rank`，简历只收录这些项目。`resume_hidden: true` 可强制排除。
   `resume_title` / `resume_summary` / `resume_tech` / `resume_bullets` 为简历专用文案。
-- **简历奖项**：`resume_title` / `resume_award_description` / `resume_reason` 覆盖主页文案。
+- **简历奖项**：`resume_title` / `resume_award_description` / `resume_reason` 覆盖主页文案；
+  `resume_hidden: true` 让奖项只出现在主页、不参与简历的前 N 条选取。
 - **简历为英文单页**：模板字体不含 CJK 字形，中文内容会触发 XeLaTeX "Missing character"。
   简历标题等字段请使用英文（主页字段不受影响）。
 - **样式**：颜色、圆角、间距使用 `_sass/homepage.scss` 顶部的 CSS 变量；链接统一走

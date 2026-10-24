@@ -2,7 +2,6 @@
   <div class="section-heading">
     <span class="section-kicker">Capabilities</span>
     <h2>Technical Skills</h2>
-    <p>Core tools and strengths across software, machine learning, and embedded practice.</p>
   </div>
 
   <div class="skills-grid">

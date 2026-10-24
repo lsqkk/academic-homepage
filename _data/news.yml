@@ -1,4 +1,12 @@
 main:
+  - date: 2026-10-24
+    title: Joined Prof. Gelin Fu's Group for HPC Research
+    description: Started preliminary research on software prefetching at the CPU architecture level in Prof. Gelin Fu's group at the [Institute of Artificial Intelligence and Robotics](https://iair.xjtu.edu.cn/), focused on high-performance computing.
+
+  - date: 2026-10-20
+    title: Named Outstanding Student Cadre
+    description: Recognized by Xi'an Jiaotong University as an outstanding student cadre at the university level.
+
   - date: 2026-10-12
     title: CoS-VRL Research Collaboration Started
     description: Began CoS-VRL with [Chengqi Shi](https://1scq.github.io/), applying step-level verifiable reinforcement learning to make video diffusion reasoning more accurate and cheaper to train.

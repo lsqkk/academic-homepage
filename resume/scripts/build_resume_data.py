@@ -431,7 +431,7 @@ def render_education(entries: list[dict[str, Any]]) -> str:
             school = href(item.get("link", ""), school)
         program = rich_text(item.get("program", ""))
         period = latex_escape(item.get("period", ""))
-        summary = rich_text(item.get("resume_summary") or item.get("focus", ""))
+        summary = rich_text(item.get("resume_summary") or "")
         context = f"education entry {item.get('school', '')!r}"
         highlights = list_field(item, "resume_highlights", context) or list_field(
             item, "highlights", context
@@ -536,7 +536,8 @@ def render_projects(entries: list[dict[str, Any]], limit: int) -> str:
 
 def render_awards(entries: list[dict[str, Any]], limit: int) -> str:
     blocks: list[str] = []
-    for item in sort_by_start_date(entries, "date")[:limit]:
+    visible = [item for item in entries if not item.get("resume_hidden")]
+    for item in sort_by_start_date(visible, "date")[:limit]:
         award = rich_text(item.get("resume_award_description") or item.get("award_description", ""))
         contest_source = str(item.get("resume_title") or item.get("title", ""))
         contest = rich_text(contest_source)

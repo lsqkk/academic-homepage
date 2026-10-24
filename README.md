@@ -18,22 +18,21 @@
 
 ### 内容结构
 
-- 支持`About Me`、`Technical Skills`、`Education`、`Project Experience`、`Competitions & Awards`、`News`、`Publications`、`Services`、`Repository Board`，并全部模块化
+- 支持`About Me`、`Technical Skills`、`Education`、`Project Experience`、`Competitions & Awards`、`News`、`Publications`、`Services`，并全部模块化
 - 主页主结构集中在 `index.md`，具体内容由 `_data/*.yml` 驱动
 - 教育经历、项目、新闻、服务、技能等都支持独立数据维护
 - 通过 `_config.yml` 控制模块显示与隐藏
+- 项目与奖项在数据文件顶部的 `categories` 中定义分类，条目用 `category` 字段归属，页面按分类渲染为标签页
 
 ### UI 与交互
 
-- 项目经历采用倒序时间轴布局，默认展示最近 8 条，支持展开/收起
-- 新闻使用独立风格时间轴，与项目区块保持统一但不完全重复
+- 项目经历按 Research、Personal Projects、Team & Coursework 分类，标签页切换，类别内按时间倒序
+- 竞赛与获奖按 Competitions、Scholarships & Honors 分类，复用同一套标签页交互
+- 新闻使用独立风格时间轴，默认展示 6 条，支持展开/收起
 - 教育经历使用卡片式展示，并支持整卡点击跳转
-- 竞赛与获奖区统一图片宽度，文本对齐更稳定
-- 整页加入鼠标跟随环境光晕与轻微背景渐变
-- 毛玻璃卡片采用半透明背景、模糊、内高光和环境光照亮效果
 - 所有图片支持点击放大弹窗，支持淡入缩放、点击空白关闭、右上角关闭、`Esc` 关闭
 - 左侧个人信息栏在桌面端固定显示，浏览长页面时不会跟随滚动离开视野
-- 顶部个人信息区包含循环打字机动画
+- 自动深色模式；移动端标签栏可横向滚动，键盘方向键可切换标签
 
 ## 简历自动生成
 

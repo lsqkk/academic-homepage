@@ -1,6 +1,20 @@
+categories:
+  - key: competitions
+    label: Competitions
+  - key: honors
+    label: Scholarships & Honors
+
 main:
+  - title: Outstanding Student Cadre
+    date: 2026-10-20
+    category: honors
+    award_description: University-Level Honor
+    reason: Recognized by Xi'an Jiaotong University for outstanding performance in student affairs work.
+    resume_hidden: true
+
   - title: Xi'an Jiaotong University Third-Class Scholarship (2025-2026)
     date: 2026-10-08
+    category: honors
     award_description: Third-Class University Scholarship · Rank 23/185 (Top 13%)
     reason: Awarded for the 2025-2026 academic year, the first year of undergraduate study, with a major ranking of 23 out of 185 students.
     resume_title: XJTU Scholarship (2025-26)
@@ -9,6 +23,7 @@ main:
 
   - title: China International College Students' Innovation Competition — Industry Track
     date: 2026-08-15
+    category: competitions
     award_description: University-Level Silver Award
     reason: Team member on "Label Correction for Intelligent Cytology-Based Cervical Cancer Diagnosis" (基于标签校正的宫颈癌细胞学图像智能诊断方法).
     image: ./assets/img/award_innovation_2026.jpg
@@ -18,6 +33,7 @@ main:
 
   - title: Mathematical Contest in Modeling (MCM) 2026
     date: 2026-05-01
+    category: competitions
     award_description: Honorable Mention
     reason: Team member alongside Li Haoxuan and [Shi Chengqi](https://1scq.github.io/), advised by Prof. Long Chen.
     image: ./assets/img/award_mcm_2026.jpg
@@ -26,30 +42,35 @@ main:
 
   - title: Outstanding Communist Youth League Cadre
     date: 2026-04-20
+    category: honors
     award_description: University-Level Honor
     reason: Recognized for outstanding performance in Communist Youth League work during 2025.
     image: ./assets/img/award_youth_league_2026.jpg
 
   - title: China Undergraduate Physics Experiment Competition
     date: 2025-12-01
+    category: competitions
     award_description: National First Prize (First Place in the Northwestern Division)
     reason: Responsible for animation simulation and video production of core experimental phenomena.
     image: ./assets/img/award_physics.jpg
 
   - title: Global Campus Artificial Intelligence Algorithm Elite Competition (AIC)
     date: 2025-12-11
+    category: competitions
     award_description: Provincial Third Prize
     reason: Responsible for downloading, preprocessing, cleaning, and spatial interpolation of multimodal meteorological data.
     image: ./assets/img/award_aic.png
 
   - title: Xi'an Jiaotong University Scholarship (2024-2025)
     date: 2025-12-12
+    category: honors
     award_description: University-Level Third-Class Scholarship
     reason: Awarded for the 2024-2025 academic year for ranking in the top 20% of the comprehensive assessment.
     image: ./assets/img/award_scholarship.jpg
 
   - title: Mathematical Contest in Modeling / Interdisciplinary Contest in Modeling (MCM/ICM)
     date: 2025-05-01
+    category: competitions
     award_description: Honorable Mention
     reason: Responsible for mathematical model construction, paper writing, and data visualization.
     image: ./assets/img/award_mcm.png

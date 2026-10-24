@@ -115,6 +115,30 @@ class ProjectSelectionTests(unittest.TestCase):
             resume.project_bullets({"title": "bad", "resume_bullets": "one bullet"})
 
 
+class AwardSelectionTests(unittest.TestCase):
+    def test_hidden_award_is_excluded(self) -> None:
+        awards = [
+            {"title": "hidden", "date": date(2026, 5, 1), "resume_hidden": True},
+            {"title": "visible", "date": date(2025, 5, 1)},
+        ]
+
+        rendered = resume.render_awards(awards, limit=1)
+
+        self.assertIn("visible", rendered)
+        self.assertNotIn("hidden", rendered)
+
+    def test_recent_awards_fill_the_limit(self) -> None:
+        awards = [
+            {"title": "older", "date": date(2025, 1, 1)},
+            {"title": "newer", "date": date(2026, 1, 1)},
+        ]
+
+        rendered = resume.render_awards(awards, limit=1)
+
+        self.assertIn("newer", rendered)
+        self.assertNotIn("older", rendered)
+
+
 class DateFormattingTests(unittest.TestCase):
     def test_may_does_not_get_a_double_period(self) -> None:
         year = date.today().year

@@ -32,7 +32,3 @@ layout: homepage
 {% if site.section_visibility.news != false %}
 {% include news.md %}
 {% endif %}
-
-{% if site.section_visibility.repo_board != false %}
-{% include repo-board.md %}
-{% endif %}

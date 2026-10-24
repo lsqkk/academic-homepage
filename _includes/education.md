@@ -2,7 +2,6 @@
   <div class="section-heading">
     <span class="section-kicker">Academic Path</span>
     <h2>Education</h2>
-    <p>Each card highlights one stage of training, from foundational preparation to formal degree study.</p>
   </div>
 
   <div class="education-grid">
@@ -19,10 +18,6 @@
         </div>
         <span class="education-period">{{ item.period }}</span>
       </div>
-
-      {% if item.focus %}
-      <p class="education-focus">{% include rich-text.html text=item.focus %}</p>
-      {% endif %}
 
       {% if item.summary %}
       <p class="education-summary">{% include rich-text.html text=item.summary %}</p>

@@ -79,6 +79,7 @@ description: Built with [PaddlePaddle](https://www.paddlepaddle.org.cn/).
 - `education.main[].resume_summary`、`resume_highlights`：简历专用文案；不写则用主页字段。
 - `awards.main[].link`：奖项标题的链接；`reason` 支持行内 Markdown 链接。
 - `awards.main[].resume_title`、`resume_award_description`、`resume_reason`：简历专用奖项文案。
+- `awards.main[].resume_hidden: true`：仍显示在主页，但不进入简历（按日期取前 N 条时会跳过）。
 - `profile.about.resume_summary`、`resume_focus`：简历专用简介。
 - 技能条目和获奖理由里的链接会同时出现在主页和简历中。
 
