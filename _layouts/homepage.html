@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#15181d" media="(prefers-color-scheme: dark)">
     <script>document.documentElement.classList.add("js");</script>
     <meta name="description" content="{{ site.description }}">
     {% if site.keywords %}
@@ -44,64 +46,138 @@
         <img id="image-lightbox-img" src="" alt="">
       </div>
     </div>
+    {% if site.wechat_qr %}
+    <div class="wechat-modal" id="wechat-modal" aria-hidden="true">
+      <div class="wechat-modal-backdrop" data-wechat-close></div>
+      <div class="wechat-modal-dialog" role="dialog" aria-modal="true" aria-labelledby="wechat-modal-title" aria-describedby="wechat-modal-desc">
+        <button type="button" class="wechat-modal-close" data-wechat-close aria-label="Close WeChat dialog">&times;</button>
+        <div class="wechat-modal-media">
+          <img src="{{ site.wechat_qr }}" alt="WeChat QR code for {{ site.title }}" width="700" height="1037" data-no-lightbox>
+        </div>
+        <div class="wechat-modal-copy">
+          <p class="wechat-modal-kicker">WeChat</p>
+          <h2 id="wechat-modal-title">Add me on WeChat</h2>
+          <p id="wechat-modal-desc">Scan the QR code to add me on WeChat.</p>
+          <p class="wechat-modal-note">For research conversations, project questions, or a quick hello.</p>
+        </div>
+      </div>
+    </div>
+    {% endif %}
     <div class="wrapper">
       <header>
-        {% if site.avatar %}
-        <span class="image avatar">
-          <img src="{{ site.avatar }}" alt="{{ site.title }} portrait" />
-        </span>
-        {% endif %}
+        <div class="sidebar-inner">
+          <div class="sidebar-identity">
+            {% if site.avatar %}
+            <span class="image avatar">
+              <img src="{{ site.avatar }}" alt="{{ site.title }} portrait" />
+            </span>
+            {% endif %}
 
-        <h1>{{ site.title }}</h1>
+            <h1>{{ site.title }}</h1>
 
-        <div class="header-meta">
-          {% if site.position %}
-          <p class="header-position">{{ site.position }}</p>
+            <div class="header-meta">
+              {% if site.position %}
+              <p class="header-position">{{ site.position }}</p>
+              {% endif %}
+              {% if site.affiliation %}
+              <p class="header-affiliation"><a href="{{ site.affiliation_link }}" rel="noopener">{{ site.affiliation }}</a></p>
+              {% endif %}
+            </div>
+          </div>
+
+          <ul class="sidebar-facts" aria-label="Affiliation and contact details">
+            <li>
+              <a class="sidebar-fact" href="{{ site.department_link | default: 'https://automation.xjtu.edu.cn' }}" target="_blank" rel="noopener">
+                <span class="sidebar-fact-icon"><i class="fas fa-building-columns" aria-hidden="true"></i></span>
+                <span class="sidebar-fact-text">{{ site.department }},<br>{{ site.affiliation }}</span>
+              </a>
+            </li>
+            <li class="sidebar-fact">
+              <span class="sidebar-fact-icon"><i class="fas fa-location-dot" aria-hidden="true"></i></span>
+              <span class="sidebar-fact-text">{{ site.location | default: "Xi'an, China" }}</span>
+            </li>
+            {% if site.email %}
+            <li>
+              <a class="sidebar-fact" href="mailto:{{ site.email }}">
+                <span class="sidebar-fact-icon"><i class="fas fa-envelope" aria-hidden="true"></i></span>
+                <span class="sidebar-fact-text sidebar-fact-email">{{ site.email }}</span>
+              </a>
+            </li>
+            {% endif %}
+          </ul>
+
+          <div class="social-icons">
+          {% if site.google_scholar %}
+          <a href="{{ site.google_scholar }}" aria-label="Google Scholar" title="Google Scholar" rel="noopener">
+            <i class="ai ai-google-scholar" aria-hidden="true"></i>
+          </a>
           {% endif %}
-          {% if site.affiliation %}
-          <p class="header-affiliation"><a href="{{ site.affiliation_link }}" rel="noopener">{{ site.affiliation }}</a></p>
+
+          {% if site.cv_link %}
+          <a href="{{ site.cv_link }}" aria-label="Curriculum Vitae" title="Curriculum Vitae (PDF)" target="_blank" rel="noopener">
+            <i class="ai ai-cv" aria-hidden="true"></i>
+          </a>
           {% endif %}
-          {% if site.email %}
-          <p class="header-email"><email>{{ site.email }}</email></p>
+
+          {% if site.github_link %}
+          <a href="{{ site.github_link }}" aria-label="GitHub" title="GitHub" rel="noopener">
+            <i class="fab fa-github" aria-hidden="true"></i>
+          </a>
           {% endif %}
-        </div>
 
-        <div class="social-icons">
-        {% if site.google_scholar %}
-        <a href="{{ site.google_scholar }}" aria-label="Google Scholar" rel="noopener">
-          <i class="ai ai-google-scholar" aria-hidden="true"></i>
-        </a>
-        {% endif %}
+          {% if site.homepage_link %}
+          <a href="{{ site.homepage_link }}" aria-label="Personal homepage" title="Personal homepage" rel="noopener">
+            <i class="fas fa-house" aria-hidden="true"></i>
+          </a>
+          {% endif %}
 
-        {% if site.cv_link %}
-        <a href="{{ site.cv_link }}" aria-label="Curriculum Vitae" target="_blank" rel="noopener">
-          <i class="ai ai-cv" aria-hidden="true"></i>
-        </a>
-        {% endif %}
+          {% if site.linkedin %}
+          <a href="{{ site.linkedin }}" aria-label="LinkedIn" title="LinkedIn" rel="noopener">
+            <i class="fab fa-linkedin" aria-hidden="true"></i>
+          </a>
+          {% endif %}
 
-        {% if site.github_link %}
-        <a href="{{ site.github_link }}" aria-label="GitHub" rel="noopener">
-          <i class="fab fa-github" aria-hidden="true"></i>
-        </a>
-        {% endif %}
+          {% if site.twitter %}
+          <a href="{{ site.twitter }}" aria-label="X" title="X" rel="noopener">
+            <i class="fab fa-x-twitter" aria-hidden="true"></i>
+          </a>
+          {% endif %}
 
-        {% if site.homepage_link %}
-        <a href="{{ site.homepage_link }}" aria-label="Personal homepage" rel="noopener">
-          <i class="fas fa-house" aria-hidden="true"></i>
-        </a>
-        {% endif %}
+          {% if site.wechat_qr %}
+          <a href="{{ site.wechat_qr }}" class="social-wechat" data-wechat-open aria-haspopup="dialog" aria-controls="wechat-modal" aria-label="WeChat" title="WeChat">
+            <i class="fab fa-weixin" aria-hidden="true"></i>
+          </a>
+          {% endif %}
+          </div>
 
-        {% if site.linkedin %}
-        <a href="{{ site.linkedin }}" aria-label="LinkedIn" rel="noopener">
-          <i class="fab fa-linkedin" aria-hidden="true"></i>
-        </a>
-        {% endif %}
+          <nav class="sidebar-nav" aria-label="Page sections">
+            {% if site.section_visibility.about != false %}
+            <a href="#about" aria-current="location">About</a>
+            {% endif %}
+            {% if site.section_visibility.education != false %}
+            <a href="#education">Education</a>
+            {% endif %}
+            {% if site.section_visibility.projects != false %}
+            <a href="#projects">Projects</a>
+            {% endif %}
+            {% if site.section_visibility.awards != false %}
+            <a href="#awards">Awards</a>
+            {% endif %}
+            {% if site.section_visibility.publications %}
+            <a href="#publications">Publications</a>
+            {% endif %}
+            {% if site.section_visibility.services %}
+            <a href="#services">Services</a>
+            {% endif %}
+            {% if site.section_visibility.skills != false %}
+            <a href="#skills">Skills</a>
+            {% endif %}
+            {% if site.section_visibility.news != false %}
+            <a href="#news">News</a>
+            {% endif %}
+          </nav>
 
-        {% if site.twitter %}
-        <a href="{{ site.twitter }}" aria-label="X" rel="noopener">
-          <i class="fab fa-x-twitter" aria-hidden="true"></i>
-        </a>
-        {% endif %}
+          <p class="sidebar-copyright">&copy; {{ site.time | date: "%Y" }} {{ site.title }}</p>
         </div>
       </header>
       <section>

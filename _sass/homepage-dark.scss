@@ -71,6 +71,18 @@
     background: rgba(2, 6, 10, 0.76);
   }
 
+  .wechat-modal-backdrop {
+    background: rgba(2, 6, 10, 0.78);
+  }
+
+  .wechat-modal-dialog {
+    box-shadow: 0 24px 64px rgba(0, 0, 0, 0.55);
+  }
+
+  .education-card::after {
+    opacity: 0.045;
+  }
+
   .image-lightbox-close {
     background: #2a323d;
   }

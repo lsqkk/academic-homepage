@@ -8,6 +8,13 @@
     <p class="about-lead">{% include rich-text.html text=site.data.profile.about.lead %}</p>
     <p class="about-summary">{% include rich-text.html text=site.data.profile.about.summary %}</p>
 
+    {% if site.data.profile.about.status %}
+    <p class="about-status">
+      <span class="about-status-label">Open to opportunities</span>
+      <span class="about-status-text">{% include rich-text.html text=site.data.profile.about.status %}</span>
+    </p>
+    {% endif %}
+
     {% if site.data.profile.about.focus_areas %}
     <div class="education-tags about-tags">
       {% for item in site.data.profile.about.focus_areas %}

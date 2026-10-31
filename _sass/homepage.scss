@@ -86,6 +86,10 @@ hr {
   background: var(--hp-accent-soft);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .wrapper {
   width: 1040px;
   margin: 0 auto;
@@ -95,6 +99,7 @@ header {
   float: left;
   width: 240px;
   padding-top: 4.5rem;
+  overflow-x: hidden;
   text-align: center;
 }
 
@@ -115,15 +120,16 @@ footer {
   margin: 3rem 0 0;
   padding: 0;
   border: 0;
+  scroll-margin-top: 2.25rem;
 }
 
 /* ---------------------------------------------------------------- header */
 
 header .image.avatar {
   display: inline-block;
-  width: 144px;
-  height: 144px;
-  margin: 0 0 1.1rem;
+  width: 132px;
+  height: 132px;
+  margin: 0 0 1rem;
   overflow: hidden;
   border-radius: 50%;
 }
@@ -143,17 +149,32 @@ header .image.avatar img {
   object-fit: cover;
 }
 
+.sidebar-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-identity {
+  text-align: center;
+}
+
+.sidebar-identity h1 {
+  margin-bottom: 0.5rem;
+  font-size: 1.55rem;
+  letter-spacing: -0.01em;
+}
+
 .header-meta p {
   margin: 0 0 0.18rem;
 }
 
 .header-position {
   color: var(--hp-text-muted);
-  font-size: 0.95rem;
+  font-size: 0.93rem;
 }
 
 .header-affiliation {
-  font-size: 0.95rem;
+  font-size: 0.93rem;
   font-weight: 500;
 }
 
@@ -165,41 +186,184 @@ header .image.avatar img {
   color: var(--hp-accent);
 }
 
-.header-email {
-  color: var(--hp-text-muted);
-  font-size: 0.82rem;
+/* Affiliation, location and email, stacked as a compact fact list. The theme
+   ships default header list columns; reset them so this stays a vertical list. */
+header .sidebar-facts {
+  position: static;
+  top: auto;
+  right: auto;
+  margin: 1.6rem 0 0;
+  padding: 0;
+  width: auto;
+  height: auto;
+  list-style: none;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  text-align: left;
 }
 
-email {
-  color: var(--hp-text-muted);
-  font-family: "Ubuntu Mono", monospace;
+header .sidebar-facts li {
+  float: none;
+  width: auto;
+  height: auto;
+  border: 0;
+}
+
+header .sidebar-facts a {
+  height: auto;
+  text-align: left;
+}
+
+.sidebar-fact {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  margin: 0;
+  padding: 0.55rem 0.45rem;
+  border-radius: 2px;
+  background: transparent;
+  color: var(--hp-text);
   font-size: 0.8rem;
+  line-height: 1.45;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.sidebar-fact-icon {
+  display: inline-flex;
+  flex: 0 0 1.15rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.1rem;
+  color: var(--hp-text-muted);
+  font-size: 0.8rem;
+  transition: color 0.15s ease;
+}
+
+.sidebar-fact-text {
+  min-width: 0;
+}
+
+.sidebar-fact-email {
+  font-family: "Ubuntu Mono", monospace;
+  font-size: 0.74rem;
+  letter-spacing: -0.01em;
+}
+
+a.sidebar-fact:hover {
+  background: var(--hp-accent-soft);
+  color: var(--hp-accent);
+  text-decoration: none;
+}
+
+a.sidebar-fact:hover .sidebar-fact-icon {
+  color: var(--hp-accent);
+}
+
+a.sidebar-fact:focus-visible {
+  outline: 2px solid var(--hp-accent);
+  outline-offset: -2px;
 }
 
 .social-icons {
-  margin-top: 1rem;
+  margin-top: 1.35rem;
 }
 
-.social-icons a {
+.social-icons a,
+.social-icons button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 2rem;
   height: 2rem;
   margin: 0 0.08rem !important;
+  padding: 0;
+  border: 0;
   border-radius: 2px;
   background: transparent;
   color: var(--hp-text-muted) !important;
-  font-size: 1.05rem;
+  font: inherit;
+  font-size: 1.02rem;
   line-height: 1;
+  cursor: pointer;
 }
 
-.social-icons a:hover {
+.social-icons a:hover,
+.social-icons button:hover {
   background: var(--hp-accent-soft);
   color: var(--hp-accent) !important;
   text-decoration: none;
   transform: none;
 }
+
+.social-icons a:focus-visible,
+.social-icons button:focus-visible {
+  outline: 2px solid var(--hp-accent);
+  outline-offset: 1px;
+}
+
+/* Page index under the contact block. */
+.sidebar-nav {
+  margin-top: 1.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--hp-border);
+  text-align: left;
+}
+
+.sidebar-nav a {
+  position: relative;
+  display: block;
+  padding: 0.34rem 0 0.34rem 0.85rem;
+  color: var(--hp-text-muted);
+  font-size: 0.88rem;
+  line-height: 1.35;
+  transition: color 0.15s ease;
+}
+
+.sidebar-nav a::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 2px;
+  height: 0.95rem;
+  border-radius: 1px;
+  background: var(--hp-accent);
+  opacity: 0;
+  transform: translateY(-50%) scaleY(0.4);
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.sidebar-nav a:hover {
+  color: var(--hp-text);
+  text-decoration: none;
+}
+
+.sidebar-nav a.is-active {
+  color: var(--hp-accent);
+  font-weight: 600;
+}
+
+.sidebar-nav a.is-active::before {
+  opacity: 1;
+  transform: translateY(-50%) scaleY(1);
+}
+
+.sidebar-nav a:focus-visible {
+  outline: 2px solid var(--hp-accent);
+  outline-offset: -2px;
+  border-radius: 2px;
+}
+
+.sidebar-copyright {
+  margin: auto 0 0;
+  padding-top: 2.25rem;
+  color: var(--hp-text-muted);
+  font-size: 0.7rem;
+  letter-spacing: 0.02em;
+  text-align: center;
+}
+
 
 /* --------------------------------------------------------------- sections */
 
@@ -365,7 +529,33 @@ section > .homepage-block:first-child {
   margin-bottom: 1rem;
   font-size: 0.95rem;
   line-height: 1.75;
-  color: var(--hp-text-muted);
+  color: var(--hp-text);
+}
+
+.about-status {
+  margin: 1.2rem 0 1.1rem;
+  padding: 0.8rem 1rem 0.8rem 1.05rem;
+  border-left: 2px solid var(--hp-accent);
+  border-radius: 0 2px 2px 0;
+  background: var(--hp-accent-soft);
+  color: var(--hp-text);
+  font-size: 0.93rem;
+  line-height: 1.65;
+}
+
+.about-status-label {
+  display: block;
+  margin-bottom: 0.18rem;
+  color: var(--hp-accent);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.about-status strong {
+  color: var(--hp-text);
+  font-weight: 600;
 }
 
 .education-tags,
@@ -392,18 +582,40 @@ section > .homepage-block:first-child {
 
 .education-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: 1fr;
   align-items: start;
-  gap: 1.1rem;
+  gap: 1rem;
 }
 
 .education-card {
   position: relative;
   padding: 1.1rem 1.2rem;
+  overflow: hidden;
   border: 1px solid var(--hp-border);
   border-radius: var(--hp-radius);
   background: var(--hp-surface);
   transition: border-color 0.18s ease;
+}
+
+/* A faint university seal in the corner, drawn as a mask so it follows the
+   theme ink colour instead of carrying a white image background. */
+.education-card::after {
+  content: "";
+  position: absolute;
+  right: -38px;
+  bottom: -44px;
+  width: 190px;
+  height: 190px;
+  background-color: var(--hp-text);
+  opacity: 0.05;
+  -webkit-mask: url("../img/xjtu-logo.png") center / contain no-repeat;
+  mask: url("../img/xjtu-logo.png") center / contain no-repeat;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.education-card:hover::after {
+  opacity: 0.08;
 }
 
 .education-card:hover {
@@ -975,6 +1187,143 @@ section > .homepage-block:first-child {
   overflow: hidden;
 }
 
+/* ------------------------------------------------------------ wechat modal */
+
+.wechat-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0s linear 0.2s;
+}
+
+.wechat-modal.is-open {
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.2s ease, visibility 0s;
+}
+
+.wechat-modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(12, 18, 26, 0.62);
+  backdrop-filter: blur(2px);
+}
+
+.wechat-modal-dialog {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  width: min(92vw, 620px);
+  max-height: 92vh;
+  padding: 1rem;
+  overflow-y: auto;
+  border: 1px solid var(--hp-border);
+  border-radius: 4px;
+  background: var(--hp-surface);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transform: translateY(6px) scale(0.99);
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.wechat-modal.is-open .wechat-modal-dialog {
+  opacity: 1;
+  transform: none;
+}
+
+.wechat-modal-media {
+  padding: 0.4rem;
+  border: 1px solid var(--hp-border);
+  border-radius: 2px;
+  background: #ffffff;
+}
+
+.wechat-modal-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 66vh;
+  object-fit: contain;
+}
+
+.wechat-modal-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0.4rem 0.35rem 0.4rem 1.4rem;
+  text-align: left;
+}
+
+.wechat-modal-kicker {
+  margin: 0 0 0.3rem;
+  color: var(--hp-accent);
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+.wechat-modal-copy h2 {
+  margin: 0 0 0.65rem;
+  font-size: 1.3rem;
+}
+
+.wechat-modal-copy p {
+  margin: 0 0 0.65rem;
+  color: var(--hp-text);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+.wechat-modal-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.wechat-modal-note {
+  color: var(--hp-text-muted) !important;
+  font-size: 0.79rem !important;
+}
+
+.wechat-modal-close {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.45rem;
+  z-index: 2;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border: 0;
+  border-radius: 2px;
+  background: var(--hp-text);
+  color: var(--hp-bg);
+  font-size: 1.2rem;
+  line-height: 1;
+  cursor: pointer;
+  opacity: 0.72;
+  transition: opacity 0.15s ease;
+}
+
+.wechat-modal-close:hover {
+  opacity: 1;
+}
+
+.wechat-modal-close:focus-visible {
+  outline: 2px solid var(--hp-accent);
+  outline-offset: 2px;
+  opacity: 1;
+}
+
+.modal-open {
+  overflow: hidden;
+}
+
 /* ---------------------------------------------------------- collapsed list */
 
 .js [data-collapsible]:not(.is-expanded) .is-collapsed {
@@ -990,6 +1339,26 @@ section > .homepage-block:first-child {
     bottom: 0;
     left: calc(50% - 520px);
     overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+    scrollbar-color: var(--hp-border-strong) transparent;
+  }
+
+  .sidebar-inner {
+    min-height: 100%;
+  }
+
+  header::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  header::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  header::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: var(--hp-border-strong);
   }
 }
 
@@ -1034,6 +1403,54 @@ section > .homepage-block:first-child {
     padding: 2.75rem 0 0;
   }
 
+  .sidebar-inner {
+    width: 100%;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+
+  header .sidebar-facts {
+    width: max-content;
+    max-width: 100%;
+    margin: 1.3rem auto 0;
+  }
+
+  .sidebar-nav {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    gap: 0.1rem;
+    margin-top: 1.3rem;
+    padding-top: 0.4rem;
+    overflow-x: auto;
+    border-top: 1px solid var(--hp-border);
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .sidebar-nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar-nav a {
+    flex: 0 0 auto;
+    padding: 0.45rem 0.7rem;
+    font-size: 0.84rem;
+    white-space: nowrap;
+  }
+
+  .sidebar-nav a::before {
+    display: none;
+  }
+
+  .sidebar-nav a.is-active {
+    background: var(--hp-accent-soft);
+  }
+
+  .sidebar-copyright {
+    display: none;
+  }
+
   .wrapper > section {
     padding: 2.5rem 0 3rem;
     border: 0;
@@ -1046,6 +1463,7 @@ section > .homepage-block:first-child {
 
   .homepage-block {
     margin-top: 2.6rem;
+    scroll-margin-top: 1rem;
   }
 }
 
@@ -1089,12 +1507,41 @@ section > .homepage-block:first-child {
     height: 96px;
     aspect-ratio: auto;
   }
+
+  .wechat-modal {
+    padding: 1rem;
+  }
+
+  .wechat-modal-dialog {
+    grid-template-columns: 1fr;
+    width: min(94vw, 420px);
+    padding: 0.9rem;
+  }
+
+  .wechat-modal-media img {
+    max-height: 50vh;
+  }
+
+  .wechat-modal-copy {
+    padding: 1rem 0.2rem 0.2rem;
+    text-align: center;
+  }
 }
 
 @media print, screen and (max-width: 560px) {
   body {
     padding: 0 1rem;
     font-size: 16px;
+  }
+
+  .sidebar-nav {
+    flex-wrap: wrap;
+    overflow: visible;
+  }
+
+  .sidebar-nav a {
+    padding: 0.45rem 0.52rem;
+    font-size: 0.8rem;
   }
 
   .news-item {
@@ -1126,11 +1573,25 @@ section > .homepage-block:first-child {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
   .tab-panel {
     animation: none;
   }
 
   .text-link span {
+    transition: none;
+  }
+
+  .sidebar-fact,
+  .sidebar-nav a,
+  .sidebar-nav a::before,
+  .social-icons a,
+  .social-icons button,
+  .wechat-modal,
+  .wechat-modal-dialog {
     transition: none;
   }
 }
@@ -1147,8 +1608,14 @@ section > .homepage-block:first-child {
   }
 
   .image-lightbox,
+  .wechat-modal,
+  .sidebar-nav,
   .timeline-toggle,
   .tab-bar {
+    display: none;
+  }
+
+  .education-card::after {
     display: none;
   }
 
