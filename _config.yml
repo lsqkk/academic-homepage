@@ -73,6 +73,15 @@ favicon_dark: ./assets/img/favicon-dark.png  # 深色模式网站图标
 # 可以控制是否显示"Powered by Jekyll and Minimal Light theme."的页脚信息
 enable_footnote: false
 
+# 页面底部的地球模块：展示访客与站主之间的连线
+# origin_* 为站主坐标（交大兴庆校区），origin_label 同时用于文案与标记
+globe_footer:
+  enabled: true
+  origin_label: "Xi'an, China"
+  origin_latitude: 34.2465
+  origin_longitude: 108.9840
+  origin_timezone: "Asia/Shanghai"
+
 # 自动深色模式
 # 可以控制是否根据系统设置自动切换深色/浅色主题
 auto_dark_mode: true

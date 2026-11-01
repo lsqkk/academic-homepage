@@ -90,4 +90,12 @@
   .image-lightbox-close:hover {
     background: #39434f;
   }
+
+  .globe-block {
+    --globe-accent-rgb: 127, 183, 228;
+    --globe-visitor-rgb: 127, 224, 255;
+    --globe-origin-rgb: 255, 191, 120;
+    --globe-bg-rgb: 21, 24, 29;
+    --globe-land-scale: 1;
+  }
 }

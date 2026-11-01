@@ -1,0 +1,51 @@
+{% assign globe_origin_label = site.globe_footer.origin_label | default: site.location | default: "Xi'an, China" %}
+{% assign globe_origin_lat = site.globe_footer.origin_latitude | default: 34.2465 %}
+{% assign globe_origin_lon = site.globe_footer.origin_longitude | default: 108.9840 %}
+{% assign globe_origin_short = globe_origin_label | split: "," | first %}
+{% assign globe_origin_tz = site.globe_footer.origin_timezone | default: "Asia/Shanghai" %}
+<section
+  class="homepage-block globe-block"
+  id="connection"
+  aria-labelledby="globe-title"
+  data-origin-lat="{{ globe_origin_lat }}"
+  data-origin-lon="{{ globe_origin_lon }}"
+  data-origin-label="{{ globe_origin_label | escape }}"
+  data-origin-tz="{{ globe_origin_tz | escape }}">
+  <div class="section-heading">
+    <span class="section-kicker">Connection</span>
+    <h2 id="globe-title">Across the Wire</h2>
+  </div>
+
+  <div class="globe-block-inner">
+    <div class="globe-stage">
+      <canvas id="globe-canvas" aria-hidden="true"></canvas>
+    </div>
+
+    <div class="globe-copy">
+      <h3 class="globe-heading" id="globe-heading" aria-live="polite">Welcome, a friend from somewhere on Earth.</h3>
+      <p class="globe-lede" id="globe-lede">Every visit arrives from a different point on the same planet. This page lives in {{ globe_origin_label }}.</p>
+
+      <div class="globe-metric" id="globe-metric" hidden>
+        <span class="globe-metric-value" id="globe-distance">&mdash;</span>
+        <span class="globe-metric-unit">km apart</span>
+      </div>
+
+      <dl class="globe-readout">
+        <div class="globe-readout-row">
+          <dt><i class="globe-dot globe-dot-you" aria-hidden="true"></i>You</dt>
+          <dd>
+            <span id="globe-you-coords">Locating&hellip;</span>
+            <span class="globe-time" id="globe-you-time"></span>
+          </dd>
+        </div>
+        <div class="globe-readout-row">
+          <dt><i class="globe-dot globe-dot-origin" aria-hidden="true"></i>{{ globe_origin_short }}</dt>
+          <dd>
+            <span id="globe-origin-coords">&mdash;</span>
+            <span class="globe-time" id="globe-origin-time"></span>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </div>
+</section>

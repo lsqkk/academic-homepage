@@ -192,11 +192,14 @@
 
       </section>
       <footer>
-        
+
       </footer>
     </div>
     <script src="{{ "/assets/js/scale.fix.js" | relative_url }}"></script>
     <script src="{{ "/assets/js/homepage-ui.js" | relative_url }}"></script>
+    {% if site.globe_footer.enabled != false %}
+    <script src="{{ "/assets/js/globe.js" | relative_url }}" type="module"></script>
+    {% endif %}
     {% if site.google_analytics %}
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

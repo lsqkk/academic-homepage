@@ -1,0 +1,168 @@
+// Connection globe: a live, wireframe Earth drawn inside the reading column.
+// The block follows the same heading, spacing, and hairline language as the
+// other homepage sections; the only added texture is the canvas itself.
+
+.globe-block {
+  --globe-accent-rgb: 26, 90, 150;
+  --globe-visitor-rgb: 0, 118, 173;
+  --globe-origin-rgb: 176, 105, 20;
+  --globe-bg-rgb: 255, 255, 255;
+  --globe-land-scale: 0.8;
+}
+
+.globe-block-inner {
+  display: grid;
+  grid-template-columns: 312px minmax(0, 1fr);
+  gap: 2.25rem;
+  align-items: center;
+  margin-top: 1.6rem;
+}
+
+.globe-stage {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.globe-stage canvas {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: grab;
+  touch-action: pan-y;
+}
+
+.globe-stage canvas:active {
+  cursor: grabbing;
+}
+
+.globe-heading {
+  margin: 0;
+  font-size: 1.18rem;
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--hp-text);
+}
+
+.globe-lede {
+  margin: 0.55rem 0 0;
+  color: var(--hp-text-muted);
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+
+.globe-metric {
+  display: flex;
+  align-items: baseline;
+  gap: 0.55rem;
+  margin: 1.1rem 0 1rem;
+  padding: 0.7rem 0;
+  border-top: 1px solid var(--hp-border);
+  border-bottom: 1px solid var(--hp-border);
+}
+
+.globe-metric[hidden] {
+  display: none;
+}
+
+.globe-metric-value {
+  font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 1.7rem;
+  line-height: 1;
+  color: var(--hp-accent);
+  font-variant-numeric: tabular-nums;
+}
+
+.globe-metric-unit {
+  font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 0.66rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--hp-text-muted);
+}
+
+.globe-readout {
+  display: grid;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.globe-readout-row {
+  display: grid;
+  grid-template-columns: 4.1rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.75rem;
+}
+
+.globe-readout dt,
+.globe-readout dd {
+  margin: 0;
+  font-family: "Ubuntu Mono", ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+}
+
+.globe-readout dt {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--hp-text-muted);
+}
+
+.globe-readout dd {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+  font-size: 0.72rem;
+  color: var(--hp-text);
+  font-variant-numeric: tabular-nums;
+}
+
+.globe-readout .globe-time {
+  color: var(--hp-text-muted);
+  white-space: nowrap;
+}
+
+.globe-dot {
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+}
+
+.globe-dot-you {
+  background: rgb(var(--globe-visitor-rgb));
+  box-shadow: 0 0 6px rgba(var(--globe-visitor-rgb), 0.55);
+}
+
+.globe-dot-origin {
+  background: rgb(var(--globe-origin-rgb));
+  box-shadow: 0 0 6px rgba(var(--globe-origin-rgb), 0.55);
+}
+
+
+@media screen and (max-width: 760px) {
+  .globe-block-inner {
+    grid-template-columns: 1fr;
+    gap: 1.4rem;
+  }
+
+  .globe-stage {
+    width: 232px;
+    margin: 0 auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .globe-stage canvas {
+    cursor: default;
+  }
+}
+
+@media print {
+  .globe-block {
+    display: none;
+  }
+}

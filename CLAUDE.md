@@ -16,9 +16,11 @@ Minimal Light 深度改造，GitHub Pages 部署，自定义域名为 `aca.13092
 _config.yml            站点配置 + resume: 简历生成配置
 _data/*.yml            内容唯一来源（profile / education / project / awards / news / publications / services）
 _includes/*.md         Liquid 区块模板；rich-text.html 负责把 Markdown 链接渲染为 <a>
+_includes/globe.html   页脚「Across the Wire」地球模块结构
 _layouts/homepage.html 页面骨架
 _sass/homepage.scss    主页样式（含深色模式覆盖在 homepage-dark.scss）
-assets/                CSS、JS、图片与生成的简历 PDF
+_sass/globe.scss       地球模块样式与画布配色变量
+assets/                CSS、JS、图片与生成的简历 PDF；globe*.js 为地球模块
 resume/                简历 LaTeX 模板、字体、生成脚本（详见 resume/README.md）
 .github/workflows/build-resume.yml  简历自动构建
 html_source_file/      旧的静态导出，已被 _config.yml exclude，不参与构建
@@ -59,6 +61,13 @@ Windows 上若 `python` 是 Store 占位符，使用 `python3.11` 或实际解�
   简历标题等字段请使用英文（主页字段不受影响）。
 - **样式**：颜色、圆角、间距使用 `_sass/homepage.scss` 顶部的 CSS 变量；链接统一走
   `a` 的 accent 色，不要为单个区块硬编码颜色。
+- **页脚地球模块**：`_config.yml` 的 `globe_footer` 控制显隐、站主文案与坐标；
+  `_includes/globe.html` 给出结构；`assets/js/globe.js`（ES module，负责 Canvas 绘制与交互）、
+  `globe-data.js`（陆地掩码与球面几何）、`globe-location.js`（IP 定位 API 链）共同实现
+  点阵地球、访客与站主标记、连线和距离（IP 定位失败时回退为无访客状态）。画布颜色从
+  `--globe-accent-rgb` / `--globe-visitor-rgb` / `--globe-origin-rgb` / `--globe-bg-rgb`
+  读取，深色值在 `homepage-dark.scss` 覆盖，不要在 JS 里写死颜色。调试可用
+  `?lat=&lon=&city=&tz=` 覆盖定位结果。
 - **自动生成**：push 到 `main` 且改动 `_config.yml`、`_data/**`、`resume/**` 或头像时，
   workflow 会编译 PDF、写回 `assets/files/Zhu_Enze_s_Resume_en_.pdf` 并提交。
   该提交只改 PDF，不会再次触发 workflow。

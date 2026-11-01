@@ -32,3 +32,7 @@ layout: homepage
 {% if site.section_visibility.news != false %}
 {% include news.md %}
 {% endif %}
+
+{% if site.globe_footer.enabled != false %}
+{% include globe.html %}
+{% endif %}
